@@ -8,6 +8,17 @@ const COUNTERS = {
   tripsCompleted: 35000,
 };
 
+/* ══════════════════════════════════════
+   FLOATING CONTACT BUTTONS — RH info
+   Edit here to change phone/email
+   ══════════════════════════════════════ */
+const FLOATING_CONTACT = {
+  whatsappNumber: "523312945392", // formato internacional sin + ni espacios
+  whatsappMessage: "Hola, me gustaria obtener informacion sobre sus servicios",
+  emailAddress: "recursoshumanos@s-sever.com",
+  emailSubject: "Contacto desde la pagina web",
+};
+
 /* ── Hooks ── */
 function useCountUp(end, dur = 2200, go = false) {
   const [n, setN] = useState(0);
@@ -69,6 +80,8 @@ const I = {
   pill: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4.5 12.5l6-6a4.24 4.24 0 016 6l-6 6a4.24 4.24 0 01-6-6z"/><line x1="10.5" y1="8.5" x2="15.5" y2="13.5"/></svg>,
   store: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 9l1-4h16l1 4"/><path d="M3 9v10a2 2 0 002 2h14a2 2 0 002-2V9"/><path d="M9 21V13h6v8"/></svg>,
   chip: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/></svg>,
+  whatsapp: <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>,
+  atSymbol: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"/></svg>,
 };
 
 /* ══════════════════════════
@@ -419,6 +432,28 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* ═══ FLOATING CONTACT BUTTONS ═══ */}
+      <div className="floating-contact" role="complementary" aria-label="Contacto rapido">
+        <a
+          href={`https://wa.me/${FLOATING_CONTACT.whatsappNumber}?text=${encodeURIComponent(FLOATING_CONTACT.whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="floating-btn floating-btn--whatsapp"
+          aria-label="Contactar por WhatsApp"
+        >
+          <span className="floating-btn__icon">{I.whatsapp}</span>
+          <span className="floating-btn__tooltip">Chatea con nosotros</span>
+        </a>
+        <a
+          href={`mailto:${FLOATING_CONTACT.emailAddress}?subject=${encodeURIComponent(FLOATING_CONTACT.emailSubject)}`}
+          className="floating-btn floating-btn--email"
+          aria-label="Enviar correo electronico"
+        >
+          <span className="floating-btn__icon">{I.atSymbol}</span>
+          <span className="floating-btn__tooltip">Enviar correo</span>
+        </a>
+      </div>
 
       {/* ═══ FOOTER ═══ */}
       <footer className="footer">
@@ -828,6 +863,90 @@ img { max-width: 100%; height: auto; }
   text-align: center; font-size: 12px; color: rgba(255,255,255,0.2);
 }
 
+/* ── FLOATING CONTACT BUTTONS ── */
+.floating-contact {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 200;
+  pointer-events: none;
+}
+.floating-btn {
+  position: relative;
+  pointer-events: auto;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease, background 0.2s ease;
+  animation: floatBtnIn 0.5s cubic-bezier(.16,1,.3,1) both;
+}
+.floating-btn:nth-child(1) { animation-delay: 0.15s; }
+.floating-btn:nth-child(2) { animation-delay: 0.3s; }
+@keyframes floatBtnIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.7); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.floating-btn--whatsapp { background: #25D366; }
+.floating-btn--whatsapp:hover { background: #1ebe5d; }
+.floating-btn--email { background: #00b4d8; }
+.floating-btn--email:hover { background: #0096b7; }
+.floating-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22), 0 4px 10px rgba(0,0,0,0.14);
+}
+.floating-btn:active { transform: translateY(-1px) scale(0.98); }
+.floating-btn__icon { display: flex; align-items: center; justify-content: center; }
+.floating-btn__tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: #0a2a4a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+.floating-btn__tooltip::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #0a2a4a;
+}
+.floating-btn:hover .floating-btn__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+/* Pulse ring on whatsapp for extra attention */
+.floating-btn--whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: wappPulse 2.2s cubic-bezier(.16,1,.3,1) infinite;
+}
+@keyframes wappPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .nav__links { display: none !important; }
@@ -846,6 +965,9 @@ img { max-width: 100%; height: auto; }
   .hero { padding: 100px 20px 70px; }
   .cert-bar__inner { gap: 16px; }
   .cert-badge { padding: 10px 16px; }
+  .floating-contact { right: 16px; bottom: 16px; gap: 12px; }
+  .floating-btn { width: 52px; height: 52px; }
+  .floating-btn__tooltip { display: none; }
 }
 
 /* ── SCROLLBAR ── */
