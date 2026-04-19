@@ -49,18 +49,6 @@ function Reveal({ children, delay = 0, className = "" }) {
   );
 }
 
-/* ── Logo SVG (recreated from brand) ── */
-const SeverLogo = ({ size = 42, light = false }) => (
-  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="50" rx="38" ry="22" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="3" transform="rotate(0 50 50)" />
-    <ellipse cx="50" cy="50" rx="38" ry="22" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="3" transform="rotate(90 50 50)" />
-    <path d="M12 50 C 25 35, 40 25, 50 12" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-    <path d="M88 50 C 75 65, 60 75, 50 88" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-    <path d="M12 50 C 25 65, 40 75, 50 88" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-    <path d="M88 50 C 75 35, 60 25, 50 12" stroke={light ? "#fff" : "#00b4d8"} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-  </svg>
-);
-
 /* ── Icons ── */
 const I = {
   truck: <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
@@ -82,6 +70,16 @@ const I = {
   store: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 9l1-4h16l1 4"/><path d="M3 9v10a2 2 0 002 2h14a2 2 0 002-2V9"/><path d="M9 21V13h6v8"/></svg>,
   chip: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/></svg>,
 };
+
+/* ══════════════════════════
+   CERTIFICATIONS DATA
+   ══════════════════════════ */
+const CERTIFICATIONS = [
+  { name: "C-TPAT", img: "/ctpat-logo-arriba.png" },
+  { name: "Transporte Limpio", img: "/certificacion-transportelimpio.png" },
+  { name: "OEA", img: "/Sello-OEA.png", note: "*En proceso" },
+  { name: "BASC", img: "/BASC.png" },
+];
 
 /* ══════════════════════════
    MAIN COMPONENT
@@ -124,7 +122,11 @@ export default function App() {
       <nav className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
         <div className="nav__inner">
           <div className="nav__logo" onClick={() => go("hero")}>
-            <SeverLogo size={36} light />
+            <img
+              src="/sever-logo.png"
+              alt="Soluciones Sever"
+              className="nav__logo-img"
+            />
             <div>
               <div className="nav__logo-text">SEVER</div>
               <div className="nav__logo-sub">Soluciones Logisticas</div>
@@ -143,89 +145,98 @@ export default function App() {
       {menuOpen && (
         <div className="mobile-menu">
           {links.map(l => <button key={l.id} onClick={() => go(l.id)} className="mobile-menu__link">{l.l}</button>)}
-          <button onClick={() => go("contacto")} className="nav__cta" style={{ width: "100%", marginTop: 12 }}>Solicitar Cotizacion</button>
+          <button className="nav__cta" onClick={() => go("contacto")} style={{ marginTop: 12, width: "100%" }}>Solicitar Cotizacion</button>
         </div>
       )}
 
       {/* ═══ HERO ═══ */}
       <section id="hero" className="hero">
-        <div className="hero__bg" />
-        <div className="hero__particles">
-          {[...Array(6)].map((_, i) => <div key={i} className="hero__particle" style={{ left: `${10 + i * 15}%`, animationDelay: `${i * 0.7}s`, animationDuration: `${6 + i * 1.2}s` }} />)}
-        </div>
-        <div className="hero__content">
+        <div className="hero__inner">
           <Reveal>
-            <div className="hero__badge">En ruta desde {COUNTERS.yearFounded}</div>
+            <p className="hero__label">SOLUCIONES LOGISTICAS INTEGRALES</p>
           </Reveal>
-          <Reveal delay={0.12}>
-            <h1 className="hero__title">Transportar es<br/>lo que hacemos</h1>
+          <Reveal delay={0.1}>
+            <h1 className="hero__title">Conectamos tu carga<br />con su destino</h1>
           </Reveal>
-          <Reveal delay={0.24}>
-            <p className="hero__desc">Soluciones Sever, lider en logistica terrestre. Servicio especializado de autotransporte local, foraneo y a frontera con EUA.</p>
+          <Reveal delay={0.2}>
+            <p className="hero__sub">
+              Servicio Especializado de Autotransporte local, foraneo y a frontera con EUA.
+              Seguridad, eficiencia y tecnologia en cada viaje.
+            </p>
           </Reveal>
-          <Reveal delay={0.36}>
-            <div className="hero__btns">
-              <button className="btn btn--primary" onClick={() => go("contacto")}>Contactanos <span style={{ marginLeft: 6 }}>{I.arrow}</span></button>
+          <Reveal delay={0.3}>
+            <div className="hero__actions">
+              <button className="btn btn--primary" onClick={() => go("contacto")}>Solicitar Cotizacion {I.arrow}</button>
               <button className="btn btn--outline" onClick={() => go("servicios")}>Ver Servicios</button>
             </div>
           </Reveal>
         </div>
-        <div className="hero__scroll" onClick={() => go("nosotros")}>
-          <span className="hero__scroll-text">Conoce mas</span>
-          <div className="hero__scroll-icon">{I.chevron}</div>
+        <div className="hero__scroll" onClick={() => go("certificaciones")}>
+          {I.chevron}
         </div>
       </section>
 
-      {/* ═══ CERT BAR ═══ */}
-      <section className="cert-bar">
-        <Reveal>
-          <div className="cert-bar__inner">
-            {["C-TPAT", "Transporte Limpio", "OEA*", "SmartQuark"].map((c, i) => (
-              <div key={i} className="cert-chip">
-                <div className="cert-chip__icon">{I.shield}</div>
-                <span className="cert-chip__name">{c}</span>
+      {/* ═══ CERTIFICATIONS BAR ═══ */}
+      <section id="certificaciones" className="cert-bar">
+        <div className="cert-bar__inner">
+          {CERTIFICATIONS.map((c, i) => (
+            <Reveal key={c.name} delay={i * 0.08}>
+              <div className="cert-badge">
+                <div className="cert-badge__img-wrap">
+                  <img src={c.img} alt={c.name} className="cert-badge__img" />
+                </div>
+                <span className="cert-badge__name">{c.name}{c.note ? "*" : ""}</span>
               </div>
-            ))}
-            <span className="cert-note">*En proceso</span>
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+          <span className="cert-bar__note">*En proceso</span>
+        </div>
       </section>
 
       {/* ═══ NOSOTROS ═══ */}
-      <section id="nosotros" className="section">
-        <div className="container two-col">
-          <div>
-            <Reveal>
-              <span className="tag">Quienes Somos</span>
-              <h2 className="section-title">Acerca de<br/>Soluciones Sever</h2>
-              <p className="body-text">Soluciones Sever inicio operaciones en Mayo de 2013, con el firme proposito de ofrecer un Servicio Especializado de Autotransporte local, foraneo y a frontera con EUA, satisfaciendo las necesidades del transporte y logistica en la distribucion de mercancia.</p>
-            </Reveal>
-            <Reveal delay={0.12}>
+      <section id="nosotros" className="section section--light">
+        <div className="section__inner two-col">
+          <Reveal>
+            <div>
+              <p className="section__label">QUIENES SOMOS</p>
+              <h2 className="section__title">Acerca de<br />Soluciones Sever</h2>
+              <p className="section__text">
+                Soluciones Sever inicio operaciones en Mayo de 2013, con el firme proposito de ofrecer un
+                Servicio Especializado de Autotransporte local, foraneo y a frontera con EUA, satisfaciendo
+                las necesidades del transporte y logistica en la distribucion de mercancia.
+              </p>
               <div ref={cRef} className="counter-row">
-                <div className="counter-card">
-                  <div className="counter-card__num">{COUNTERS.yearFounded}</div>
-                  <div className="counter-card__label">Ano de creacion</div>
+                <div className="counter-item">
+                  <span className="counter-item__number">{new Date().getFullYear() - COUNTERS.yearFounded}+</span>
+                  <span className="counter-item__label">Anos de experiencia</span>
                 </div>
-                <div className="counter-card counter-card--accent">
-                  <div className="counter-card__num">+{tripCount.toLocaleString()}</div>
-                  <div className="counter-card__label">Viajes realizados</div>
+                <div className="counter-item">
+                  <span className="counter-item__number">{tripCount.toLocaleString()}+</span>
+                  <span className="counter-item__label">Viajes completados</span>
                 </div>
               </div>
+            </div>
+          </Reveal>
+          <div className="mv-cards">
+            <Reveal delay={0.1}>
+              <div className="mv-card">
+                <h3 className="mv-card__title">Mision</h3>
+                <p className="mv-card__text">
+                  Somos una empresa de servicios logisticos y de transporte.
+                  Ofrecemos a nuestros clientes soluciones a la medida,
+                  buscando la excelencia y rentabilidad con niveles optimos de
+                  calidad y seguridad a traves de la innovacion y mejora continua.
+                </p>
+              </div>
             </Reveal>
-          </div>
-          <div>
-            <Reveal delay={0.15}>
-              <div className="filos-stack">
-                {[
-                  { t: "Mision", p: "Somos una empresa de servicios logisticos y de transporte. Ofrecemos a nuestros clientes soluciones a la medida, buscando la excelencia y rentabilidad con niveles optimos de calidad y seguridad a traves de la innovacion y mejora continua." },
-                  { t: "Vision", p: "Posicionarnos como una de las empresas mas especializadas y seguras en transporte terrestre y logistica a nivel nacional, manteniendo certificaciones de seguridad y calidad nacionales e internacionales." },
-                  { t: "Valores", p: "Comprometidos con la responsabilidad social, promovemos la seguridad, etica, verdad, equidad y respeto, trabajando con directrices que buscan la excelencia en servicios y la mejora continua.", accent: true },
-                ].map((f, i) => (
-                  <div key={i} className={`filos-card ${f.accent ? "filos-card--accent" : ""}`}>
-                    <h3 className="filos-card__title">{f.t}</h3>
-                    <p className="filos-card__text">{f.p}</p>
-                  </div>
-                ))}
+            <Reveal delay={0.2}>
+              <div className="mv-card">
+                <h3 className="mv-card__title">Vision</h3>
+                <p className="mv-card__text">
+                  Posicionarnos como una de las empresas mas especializadas y
+                  reconocidas en el sector de transporte y logistica, ampliando nuestro
+                  alcance a nivel nacional e internacional con soluciones innovadoras.
+                </p>
               </div>
             </Reveal>
           </div>
@@ -233,205 +244,178 @@ export default function App() {
       </section>
 
       {/* ═══ SERVICIOS ═══ */}
-      <section id="servicios" className="section section--dark">
-        <div className="container">
-          <Reveal>
-            <div className="section-header">
-              <span className="tag tag--light">Lo que ofrecemos</span>
-              <h2 className="section-title section-title--white">Nuestros Servicios</h2>
-              <p className="section-sub section-sub--light">Contamos con los siguientes servicios para cubrir tus necesidades de transporte y logistica.</p>
-            </div>
-          </Reveal>
-          <div className="serv-grid">
-            {[
-              { icon: I.truck, t: "Punto a Punto y Multi Entrega", d: "Servicio de transporte directo o con multiples puntos de entrega, adaptado a tu operacion." },
-              { icon: I.user, t: "Ejecutivo Exclusivo para CEDIS", d: "Asignamos un ejecutivo dedicado para cada centro de distribucion, garantizando atencion personalizada." },
-              { icon: I.gps, t: "Monitoreo GPS 24/7", d: "Rastreo satelital en tiempo real de todas nuestras unidades para total visibilidad de tu carga." },
-              { icon: I.box, t: "Equipos Dedicados", d: "Unidades exclusivas asignadas a tu operacion para garantizar disponibilidad y continuidad de servicio." },
-              { icon: I.snow, t: "Caja Seca y Refrigerada", d: "Transporte en modalidad seca y refrigerada o congelada para productos que requieren cadena de frio." },
-              { icon: I.shield, t: "Seguridad Certificada", d: "Operamos bajo certificaciones C-TPAT y SmartQuark, con estandares internacionales de seguridad." },
-            ].map((s, i) => (
-              <Reveal key={i} delay={i * 0.07}>
-                <div className="serv-card">
-                  <div className="serv-card__icon">{s.icon}</div>
-                  <h3 className="serv-card__title">{s.t}</h3>
-                  <p className="serv-card__desc">{s.d}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      <section id="servicios" className="section section--white">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>NUESTROS SERVICIOS</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Soluciones de Transporte</h2>
+        </Reveal>
+        <div className="serv-grid">
+          {[
+            { icon: I.truck, title: "Transporte Local y Foraneo", desc: "Servicio de autotransporte de carga dentro de la ciudad y a nivel nacional con la maxima seguridad." },
+            { icon: I.shield, title: "Seguridad Certificada", desc: "Contamos con certificaciones C-TPAT, OEA y Transporte Limpio que garantizan la proteccion de tu carga." },
+            { icon: I.gps, title: "Rastreo Satelital", desc: "Monitoreo GPS en tiempo real las 24 horas para que siempre sepas donde esta tu mercancia." },
+            { icon: I.box, title: "Logistica Integral", desc: "Gestion completa de la cadena de suministro: almacenamiento, distribucion y entrega en destino." },
+            { icon: I.snow, title: "Transporte a Frontera", desc: "Servicio especializado de cruce fronterizo con EUA, cumpliendo todas las regulaciones binacionales." },
+            { icon: I.user, title: "Atencion Personalizada", desc: "Asignamos un ejecutivo dedicado para cada cliente, asegurando comunicacion directa y soluciones rapidas." },
+          ].map((s, i) => (
+            <Reveal key={i} delay={i * 0.07}>
+              <div className="serv-card">
+                <div className="serv-card__icon">{s.icon}</div>
+                <h3 className="serv-card__title">{s.title}</h3>
+                <p className="serv-card__text">{s.desc}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {/* ═══ FLOTILLA ═══ */}
-      <section id="flotilla" className="section">
-        <div className="container">
-          <Reveal>
-            <div className="section-header">
-              <span className="tag">Nuestras Unidades</span>
-              <h2 className="section-title">Flotilla Variada</h2>
-              <p className="section-sub">Contamos con diferentes modalidades y capacidades de carga.</p>
-            </div>
-          </Reveal>
-          <div className="flot-grid">
-            {[
-              { n: "Camioneta 1.5 T", m: "Seco y Refrigerado / Congelado", c: "1.5" },
-              { n: "Mini Rabon 7 T", m: "Seco y Refrigerado / Congelado", c: "7" },
-              { n: "Rabon 10 T", m: "Seco y Refrigerado / Congelado", c: "10" },
-              { n: "Torton 15 T", m: "Seco y Refrigerado / Congelado", c: "15" },
-              { n: "Trailer 53' 26 T", m: "Seco y Refrigerado / Congelado", c: "26" },
-            ].map((u, i) => (
-              <Reveal key={i} delay={i * 0.07}>
-                <div className="flot-card">
-                  <div className="flot-card__cap">{u.c}<span className="flot-card__ton">T</span></div>
-                  <div className="flot-card__bar" />
-                  <h3 className="flot-card__name">{u.n}</h3>
-                  <p className="flot-card__modes">{u.m}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      <section id="flotilla" className="section section--light">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>FLOTILLA</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Nuestra Flota Vehicular</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 40px" }}>
+            Contamos con unidades modernas y en optimas condiciones, equipadas con la ultima tecnologia en seguridad y rastreo satelital.
+          </p>
+        </Reveal>
+        <div className="flot-grid">
+          {[
+            { label: "Tractocamiones", count: "30+", detail: "Unidades de ultima generacion" },
+            { label: "Cajas Secas", count: "40+", detail: "53 pies de capacidad" },
+            { label: "Plataformas", count: "15+", detail: "Para carga sobredimensionada" },
+            { label: "Cajas Refrigeradas", count: "10+", detail: "Con control de temperatura" },
+          ].map((f, i) => (
+            <Reveal key={i} delay={i * 0.08}>
+              <div className="flot-card">
+                <span className="flot-card__count">{f.count}</span>
+                <span className="flot-card__label">{f.label}</span>
+                <span className="flot-card__detail">{f.detail}</span>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {/* ═══ SECTORES ═══ */}
-      <section id="sectores" className="section section--gray">
-        <div className="container">
-          <Reveal>
-            <div className="section-header">
-              <span className="tag">Industrias</span>
-              <h2 className="section-title">Sectores de Experiencia</h2>
-              <p className="section-sub">Creemos que cada cliente es una sociedad duradera.</p>
-            </div>
-          </Reveal>
-          <div className="sector-grid">
-            {[
-              { icon: I.car, n: "Automotriz" }, { icon: I.food, n: "Alimentos y Bebidas" },
-              { icon: I.pill, n: "Farmaceutico" }, { icon: I.store, n: "Autoservicios y Abarrotes" },
-              { icon: I.chip, n: "Tecnologia" },
-            ].map((s, i) => (
-              <Reveal key={i} delay={i * 0.07}>
-                <div className="sector-card">
-                  <div className="sector-card__icon">{s.icon}</div>
-                  <span className="sector-card__name">{s.n}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      <section id="sectores" className="section section--white">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>SECTORES</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Industrias que Servimos</h2>
+        </Reveal>
+        <div className="sector-grid">
+          {[
+            { icon: I.car, name: "Automotriz" },
+            { icon: I.food, name: "Alimentos y Bebidas" },
+            { icon: I.pill, name: "Farmaceutica" },
+            { icon: I.store, name: "Retail y Comercio" },
+            { icon: I.chip, name: "Electronica" },
+            { icon: I.box, name: "Manufactura" },
+          ].map((s, i) => (
+            <Reveal key={i} delay={i * 0.06}>
+              <div className="sector-card">
+                <div className="sector-card__icon">{s.icon}</div>
+                <span className="sector-card__name">{s.name}</span>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      {/* ═══ CONTACTO (REDESIGNED) ═══ */}
-      <section id="contacto" className="section section--contact">
-        <div className="container">
-          <Reveal>
-            <div className="section-header">
-              <span className="tag tag--light">Contacto</span>
-              <h2 className="section-title section-title--white">Hablemos de tu operacion</h2>
-              <p className="section-sub section-sub--light">Llamanos o ingresa tus datos para ser contactado por nuestro equipo.</p>
-            </div>
-          </Reveal>
-          <div className="contact-layout">
-            {/* LEFT: Info cards */}
-            <Reveal>
-              <div className="contact-cards">
-                <div className={`contact-tab ${activeTab === "ventas" ? "contact-tab--active" : ""}`} onClick={() => setActiveTab("ventas")}>
-                  <div className="contact-tab__header">
-                    <div className="contact-tab__icon-wrap">
-                      <span className="contact-tab__icon">{I.phone}</span>
-                    </div>
-                    <div className="contact-tab__badge">Ventas</div>
-                  </div>
+      {/* ═══ CONTACTO ═══ */}
+      <section id="contacto" className="section section--dark">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center", color: "#00b4d8" }}>CONTACTO</p>
+          <h2 className="section__title" style={{ textAlign: "center", color: "#fff" }}>Trabajemos Juntos</h2>
+        </Reveal>
+        <div className="contact-layout">
+          <div className="contact-cards">
+            {[
+              {
+                key: "ventas",
+                badge: "Ventas",
+                icon: I.phone,
+                rows: [
+                  { label: "Telefono", value: "+52 (33) 1234-5678", link: "tel:+523312345678" },
+                  { label: "Email", value: "ventas@sfrlogistics.com", link: "mailto:ventas@sfrlogistics.com" },
+                ],
+              },
+              {
+                key: "operaciones",
+                badge: "Operaciones",
+                icon: I.truck,
+                rows: [
+                  { label: "Telefono", value: "+52 (33) 8765-4321", link: "tel:+523387654321" },
+                  { label: "Email", value: "ops@sfrlogistics.com", link: "mailto:ops@sfrlogistics.com" },
+                ],
+              },
+            ].map((tab) => (
+              <div
+                key={tab.key}
+                className={`contact-tab ${activeTab === tab.key ? "contact-tab--active" : ""}`}
+                onClick={() => setActiveTab(tab.key)}
+              >
+                <div className="contact-tab__header">
+                  <div className="contact-tab__icon-wrap">{tab.icon}</div>
+                  <span className="contact-tab__badge">{tab.badge}</span>
+                </div>
+                {activeTab === tab.key && (
                   <div className="contact-tab__body">
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Telefono</span>
-                      <a href="tel:+528119103303" className="contact-tab__value">+52 81 1910 3303</a>
-                    </div>
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Email</span>
-                      <a href="mailto:gerencia.ventas@s-sever.com" className="contact-tab__value contact-tab__value--link">gerencia.ventas@s-sever.com</a>
-                    </div>
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Horario</span>
-                      <span className="contact-tab__value">Lunes a Viernes, 8:00 - 18:00</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`contact-tab ${activeTab === "rh" ? "contact-tab--active" : ""}`} onClick={() => setActiveTab("rh")}>
-                  <div className="contact-tab__header">
-                    <div className="contact-tab__icon-wrap">
-                      <span className="contact-tab__icon">{I.mail}</span>
-                    </div>
-                    <div className="contact-tab__badge">Recursos Humanos</div>
-                  </div>
-                  <div className="contact-tab__body">
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Telefono</span>
-                      <a href="tel:+523312945392" className="contact-tab__value">+52 33 1294 5392</a>
-                    </div>
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Email</span>
-                      <a href="mailto:recursoshumanos@s-sever.com" className="contact-tab__value contact-tab__value--link">recursoshumanos@s-sever.com</a>
-                    </div>
-                    <div className="contact-tab__row">
-                      <span className="contact-tab__label">Vacantes</span>
-                      <span className="contact-tab__value">Consulta posiciones disponibles</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="contact-map-hint">
-                  <span className="contact-map-hint__icon">{I.pin}</span>
-                  <span className="contact-map-hint__text">Guadalajara, Jalisco / Monterrey, Nuevo Leon</span>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* RIGHT: Form */}
-            <Reveal delay={0.15}>
-              <div className="contact-form-wrap">
-                <div className="contact-form-wrap__header">
-                  <SeverLogo size={28} />
-                  <span className="contact-form-wrap__title">Enviar mensaje</span>
-                </div>
-                {sent ? (
-                  <div className="form-success">
-                    <div className="form-success__check">&#10003;</div>
-                    <h3 className="form-success__title">Mensaje enviado</h3>
-                    <p className="form-success__text">Te contactaremos en seguida.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label className="form-label">Nombre</label>
-                        <input required className="form-input" placeholder="Tu nombre" value={form.nombre} onChange={e => setForm({ ...form, nombre: e.target.value })} />
+                    {tab.rows.map((r) => (
+                      <div key={r.label} className="contact-tab__row">
+                        <span className="contact-tab__label">{r.label}</span>
+                        <a href={r.link} className="contact-tab__value contact-tab__value--link">{r.value}</a>
                       </div>
-                      <div className="form-group">
-                        <label className="form-label">Apellido</label>
-                        <input required className="form-input" placeholder="Tu apellido" value={form.apellido} onChange={e => setForm({ ...form, apellido: e.target.value })} />
-                      </div>
-                    </div>
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label className="form-label">Email</label>
-                        <input required type="email" className="form-input" placeholder="correo@empresa.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label">Telefono</label>
-                        <input className="form-input" placeholder="+52 ..." value={form.telefono} onChange={e => setForm({ ...form, telefono: e.target.value })} />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label">Que estas buscando?</label>
-                      <textarea rows={4} className="form-input form-input--ta" placeholder="Describe brevemente tu necesidad de transporte..." value={form.mensaje} onChange={e => setForm({ ...form, mensaje: e.target.value })} />
-                    </div>
-                    <button type="submit" className="btn btn--primary btn--full">Enviar Mensaje <span style={{ marginLeft: 6 }}>{I.arrow}</span></button>
-                  </form>
+                    ))}
+                  </div>
                 )}
               </div>
-            </Reveal>
+            ))}
+            <div className="contact-map-hint">
+              <div className="contact-map-hint__icon">{I.pin}</div>
+              <span className="contact-map-hint__text">Guadalajara, Jalisco, Mexico</span>
+            </div>
+          </div>
+
+          <div className="contact-form-wrap">
+            <div className="contact-form-wrap__header">
+              <div className="contact-tab__icon-wrap">{I.mail}</div>
+              <span className="contact-form-wrap__title">Enviar Mensaje</span>
+            </div>
+            {sent ? (
+              <div className="form-success">
+                <div className="form-success__check">✓</div>
+                <p className="form-success__title">Mensaje Enviado</p>
+                <p className="form-success__text">Nos pondremos en contacto contigo pronto.</p>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">Nombre</label>
+                    <input className="form-input" placeholder="Tu nombre" value={form.nombre} onChange={e => setForm({ ...form, nombre: e.target.value })} required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Apellido</label>
+                    <input className="form-input" placeholder="Tu apellido" value={form.apellido} onChange={e => setForm({ ...form, apellido: e.target.value })} required />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">Email</label>
+                    <input className="form-input" type="email" placeholder="correo@ejemplo.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Telefono</label>
+                    <input className="form-input" type="tel" placeholder="(33) 0000-0000" value={form.telefono} onChange={e => setForm({ ...form, telefono: e.target.value })} />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label className="form-label">Mensaje</label>
+                  <textarea className="form-input form-input--ta" placeholder="¿En que podemos ayudarte?" value={form.mensaje} onChange={e => setForm({ ...form, mensaje: e.target.value })} required />
+                </div>
+                <button type="submit" className="btn btn--primary" style={{ width: "100%" }}>Enviar Mensaje {I.arrow}</button>
+              </form>
+            )}
           </div>
         </div>
       </section>
@@ -439,8 +423,13 @@ export default function App() {
       {/* ═══ FOOTER ═══ */}
       <footer className="footer">
         <div className="footer__inner">
-          <div className="footer__logo">
-            <SeverLogo size={32} light />
+          <div className="footer__logo" onClick={() => go("hero")}>
+            <img
+              src="/logo-light.png"
+              alt="Soluciones Sever"
+              className="footer__logo-img"
+              onError={(e) => { e.target.style.display = 'none'; }}
+            />
             <div>
               <div className="nav__logo-text" style={{ color: "#fff" }}>SEVER</div>
               <div className="nav__logo-sub" style={{ color: "rgba(255,255,255,0.4)" }}>Soluciones Logisticas</div>
@@ -449,270 +438,269 @@ export default function App() {
           <div className="footer__links">
             {links.map(l => <button key={l.id} onClick={() => go(l.id)} className="footer__link">{l.l}</button>)}
           </div>
-          <div>
-            <a href="https://www.s-sever.com/pol%C3%ADtica-de-privacidad" target="_blank" rel="noopener noreferrer" className="footer__link">Politica de Privacidad</a>
-          </div>
         </div>
-        <div className="footer__bar">2025 Soluciones Sever. Todos los derechos reservados.</div>
+        <div className="footer__bar">
+          © {new Date().getFullYear()} Soluciones Sever. Todos los derechos reservados.
+        </div>
       </footer>
     </div>
   );
 }
 
-/* ══════════════════════════
+/* ══════════════════════════════════════
    STYLES
-   ══════════════════════════ */
+   ══════════════════════════════════════ */
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
-
+/* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { margin: 0; -webkit-font-smoothing: antialiased; }
-
 .sever-root {
-  font-family: 'DM Sans', sans-serif;
-  color: #1a202c;
-  background: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1a2b3f; line-height: 1.6; overflow-x: hidden;
 }
+img { max-width: 100%; height: auto; }
 
 /* ── NAV ── */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 24px; transition: all 0.35s ease;
-  background: transparent;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 24px;
+  transition: all 0.35s cubic-bezier(.16,1,.3,1);
 }
 .nav--scrolled {
-  background: rgba(8,28,54,0.97);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 2px 28px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  padding: 10px 24px;
 }
 .nav__inner {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  height: 72px;
 }
 .nav__logo {
   display: flex; align-items: center; gap: 10px; cursor: pointer;
 }
+.nav__logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.35s;
+}
+.nav--scrolled .nav__logo-img {
+  filter: none;
+}
 .nav__logo-text {
-  font-weight: 800; font-size: 15px; letter-spacing: 0.18em; color: #fff; line-height: 1.2;
+  font-size: 18px; font-weight: 800; color: #fff;
+  letter-spacing: 0.12em; line-height: 1.1;
+  transition: color 0.35s;
 }
+.nav--scrolled .nav__logo-text { color: #0a2a4a; }
 .nav__logo-sub {
-  font-size: 9.5px; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); font-weight: 400;
+  font-size: 9px; color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 0.35s;
 }
+.nav--scrolled .nav__logo-sub { color: #7a8b9e; }
 .nav__links { display: flex; gap: 4px; }
 .nav__link {
-  background: none; border: none; color: rgba(255,255,255,0.65);
-  font-size: 13px; font-weight: 500; cursor: pointer; padding: 8px 14px;
-  border-radius: 6px; transition: all 0.2s; font-family: inherit; letter-spacing: 0.02em;
+  background: none; border: none; color: rgba(255,255,255,0.75);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  font-family: inherit; padding: 8px 14px; border-radius: 6px;
+  transition: all 0.2s;
 }
-.nav__link:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.nav__link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.nav--scrolled .nav__link { color: #5a6b7e; }
+.nav--scrolled .nav__link:hover { color: #0a2a4a; background: rgba(10,42,74,0.05); }
 .nav__cta {
   background: #00b4d8; color: #fff; border: none;
-  padding: 10px 24px; border-radius: 6px;
-  font-size: 13px; font-weight: 600; cursor: pointer;
-  font-family: inherit; letter-spacing: 0.02em; transition: all 0.2s;
+  padding: 10px 22px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: all 0.25s;
 }
-.nav__cta:hover { background: #0096b7; }
+.nav__cta:hover { background: #0096b7; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,180,216,0.3); }
 .nav__hamburger {
-  display: none; background: none; border: none; color: #fff; cursor: pointer; padding: 4px;
+  display: none; background: none; border: none;
+  color: #fff; cursor: pointer;
 }
+.nav--scrolled .nav__hamburger { color: #0a2a4a; }
+
+/* ── MOBILE MENU ── */
 .mobile-menu {
-  position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
-  background: rgba(8,28,54,0.98); backdrop-filter: blur(14px);
-  padding: 20px 24px; display: flex; flex-direction: column; gap: 4px;
+  position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  padding: 20px 24px; display: flex; flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 .mobile-menu__link {
-  background: none; border: none; color: rgba(255,255,255,0.8);
-  font-size: 16px; font-weight: 500; padding: 14px 0; text-align: left;
-  cursor: pointer; font-family: inherit; border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: none; border: none; text-align: left;
+  padding: 14px 0; font-size: 16px; font-weight: 500;
+  color: #0a2a4a; cursor: pointer; font-family: inherit;
+  border-bottom: 1px solid #f0f2f5;
 }
 
 /* ── HERO ── */
 .hero {
-  position: relative; min-height: 100vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 120px 24px 80px;
-  background: linear-gradient(165deg, #081c36 0%, #0a2a4a 45%, #0d3460 100%);
-  overflow: hidden;
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+  background: linear-gradient(165deg, #0a2a4a 0%, #0d3b66 40%, #0e4d80 100%);
+  position: relative; overflow: hidden;
 }
-.hero__bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 50% at 65% 35%, rgba(0,180,216,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 25% 70%, rgba(0,180,216,0.05) 0%, transparent 50%);
-  pointer-events: none;
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(0,180,216,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 30% 80%, rgba(0,180,216,0.06) 0%, transparent 50%);
 }
-.hero__particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-.hero__particle {
-  position: absolute; bottom: -20px; width: 2px; height: 2px;
-  background: rgba(0,180,216,0.4); border-radius: 50%;
-  animation: floatUp linear infinite;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
-}
-.hero__content {
-  position: relative; z-index: 2; text-align: center; max-width: 720px;
-}
-.hero__badge {
-  display: inline-block; padding: 7px 20px; border-radius: 100px;
-  background: rgba(0,180,216,0.1); border: 1px solid rgba(0,180,216,0.2);
-  color: #00b4d8; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 28px;
+.hero__inner { position: relative; max-width: 750px; }
+.hero__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+  color: #00b4d8; margin-bottom: 20px;
 }
 .hero__title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(38px, 6vw, 72px); font-weight: 700;
-  color: #fff; line-height: 1.06; letter-spacing: -0.02em;
-  margin: 0 0 24px;
+  font-size: clamp(36px, 5.5vw, 60px); font-weight: 800;
+  color: #fff; line-height: 1.1; margin-bottom: 22px;
 }
-.hero__desc {
-  font-size: clamp(16px, 2vw, 19px); line-height: 1.65;
-  color: rgba(255,255,255,0.55); max-width: 560px; margin: 0 auto 40px;
+.hero__sub {
+  font-size: 17px; color: rgba(255,255,255,0.6);
+  max-width: 520px; margin: 0 auto 36px; line-height: 1.7;
 }
-.hero__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; border: none;
-  padding: 14px 32px; border-radius: 8px;
-  font-size: 15px; font-weight: 600; cursor: pointer;
-  font-family: inherit; letter-spacing: 0.02em; transition: all 0.25s;
-}
-.btn--primary {
-  background: #00b4d8; color: #fff;
-  box-shadow: 0 4px 24px rgba(0,180,216,0.3);
-}
-.btn--primary:hover { background: #0096b7; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(0,180,216,0.35); }
-.btn--outline {
-  background: transparent; color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.btn--outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.04); }
-.btn--full { width: 100%; justify-content: center; }
+.hero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero__scroll {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  cursor: pointer; z-index: 2;
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.3); cursor: pointer;
+  animation: bob 2s ease-in-out infinite;
 }
-.hero__scroll-text {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3); font-weight: 500;
-}
-.hero__scroll-icon { color: rgba(255,255,255,0.3); animation: bounce 2s infinite; }
-@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
-/* ── CERT BAR ── */
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 10px;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: all 0.25s; border: none;
+}
+.btn--primary { background: #00b4d8; color: #fff; }
+.btn--primary:hover { background: #0096b7; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,180,216,0.3); }
+.btn--outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn--outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); }
+
+/* ── CERTIFICATIONS BAR ── */
 .cert-bar {
-  background: #fff; border-bottom: 1px solid #ebedf0; padding: 22px 24px;
+  background: #fff;
+  padding: 40px 24px;
+  border-bottom: 1px solid #e8ecf1;
 }
 .cert-bar__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: 32px; flex-wrap: wrap;
 }
-.cert-chip {
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 18px; border-radius: 8px;
-  background: #f0f9ff; border: 1px solid #d0ecf7; color: #0a2a4a;
+.cert-badge {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 24px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.3s;
 }
-.cert-chip__icon { color: #00b4d8; display: flex; }
-.cert-chip__icon svg { width: 20px; height: 20px; }
-.cert-chip__name { font-size: 13px; font-weight: 600; }
-.cert-note { font-size: 11px; color: #8a919a; font-style: italic; }
+.cert-badge:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 4px 16px rgba(0,180,216,0.08);
+  transform: translateY(-2px);
+}
+.cert-badge__img-wrap {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cert-badge__img {
+  max-width: 36px; max-height: 36px;
+  object-fit: contain;
+}
+.cert-badge__name {
+  font-size: 14px; font-weight: 600; color: #0a2a4a;
+  white-space: nowrap;
+}
+.cert-bar__note {
+  font-size: 12px; color: #94a3b8; font-style: italic;
+}
 
 /* ── SECTIONS ── */
-.section { padding: 100px 24px; }
-.section--dark { background: #081c36; }
-.section--gray { background: #f6f8fb; }
-.section--contact {
-  background: linear-gradient(170deg, #081c36 0%, #0d3460 100%);
-  position: relative;
+.section { padding: 90px 24px; }
+.section--light { background: #f8fafb; }
+.section--white { background: #fff; }
+.section--dark { background: linear-gradient(170deg, #0a2a4a, #0d3b66); }
+.section__inner { max-width: 1100px; margin: 0 auto; }
+.section__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  color: #00b4d8; margin-bottom: 12px; text-transform: uppercase;
 }
-.container { max-width: 1200px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 56px; max-width: 600px; margin-left: auto; margin-right: auto; }
-.tag {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  color: #00b4d8; display: block; margin-bottom: 12px;
+.section__title {
+  font-size: clamp(28px, 4vw, 42px); font-weight: 800;
+  color: #0a2a4a; line-height: 1.15; margin-bottom: 20px;
 }
-.tag--light { color: rgba(0,180,216,0.7); }
-.section-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(28px, 4vw, 42px); font-weight: 700;
-  color: #0a2a4a; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 16px;
+.section__text {
+  font-size: 16px; color: #5a6b7e; line-height: 1.75; max-width: 540px;
 }
-.section-title--white { color: #fff; }
-.section-sub { font-size: 16px; line-height: 1.6; color: #5a6577; margin: 0; }
-.section-sub--light { color: rgba(255,255,255,0.5); }
-.body-text { font-size: 16px; line-height: 1.7; color: #5a6577; margin: 0 0 28px; }
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;
+  max-width: 1100px; margin: 0 auto;
+}
 
-/* ── NOSOTROS ── */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.counter-row { display: flex; gap: 20px; }
-.counter-card {
-  padding: 28px 32px; border-radius: 12px;
-  background: #f6f8fb; border: 1px solid #e8ecf1; flex: 1;
-}
-.counter-card--accent {
-  background: linear-gradient(135deg, #00b4d8, #0096b7);
-  border: none;
-}
-.counter-card--accent .counter-card__num { color: #fff; }
-.counter-card--accent .counter-card__label { color: rgba(255,255,255,0.75); }
-.counter-card__num {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 38px; font-weight: 700; color: #0a2a4a; line-height: 1;
-}
-.counter-card__label { font-size: 13px; color: #8a919a; margin-top: 6px; font-weight: 500; }
+/* ── COUNTERS ── */
+.counter-row { display: flex; gap: 40px; margin-top: 36px; }
+.counter-item { display: flex; flex-direction: column; }
+.counter-item__number { font-size: 38px; font-weight: 800; color: #00b4d8; line-height: 1; }
+.counter-item__label { font-size: 13px; color: #7a8b9e; margin-top: 6px; }
 
-.filos-stack { display: flex; flex-direction: column; gap: 14px; }
-.filos-card {
-  padding: 28px; border-radius: 12px; background: #f6f8fb; border: 1px solid #e8ecf1;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* ── MISSION/VISION CARDS ── */
+.mv-cards { display: flex; flex-direction: column; gap: 20px; }
+.mv-card {
+  padding: 32px; border-radius: 16px;
+  background: #fff; border: 1px solid #e8ecf1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.3s;
 }
-.filos-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.06); }
-.filos-card--accent { background: linear-gradient(135deg, #081c36, #0d3460); border: none; }
-.filos-card__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; font-weight: 700; color: #0a2a4a; margin: 0 0 10px;
-}
-.filos-card--accent .filos-card__title { color: #00b4d8; }
-.filos-card__text { font-size: 14px; line-height: 1.65; color: #5a6577; margin: 0; }
-.filos-card--accent .filos-card__text { color: rgba(255,255,255,0.65); }
+.mv-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.06); transform: translateY(-2px); }
+.mv-card__title { font-size: 20px; font-weight: 700; color: #0a2a4a; margin-bottom: 12px; }
+.mv-card__text { font-size: 15px; color: #5a6b7e; line-height: 1.7; margin: 0; }
 
-/* ── SERVICIOS ── */
-.serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+/* ── SERVICES ── */
+.serv-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  max-width: 1100px; margin: 40px auto 0;
+}
 .serv-card {
-  padding: 36px 28px; border-radius: 12px;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-  transition: all 0.3s ease; cursor: default;
+  padding: 32px 28px; border-radius: 14px;
+  background: #f8fafb; border: 1px solid #e8ecf1;
+  transition: all 0.3s; cursor: default;
 }
-.serv-card:hover { background: rgba(0,180,216,0.06); border-color: rgba(0,180,216,0.15); transform: translateY(-3px); }
-.serv-card__icon { color: #00b4d8; margin-bottom: 18px; }
-.serv-card__title { font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 10px; }
-.serv-card__desc { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.45); margin: 0; }
+.serv-card:hover { background: #fff; border-color: #00b4d8; box-shadow: 0 8px 28px rgba(0,180,216,0.08); transform: translateY(-3px); }
+.serv-card__icon { color: #00b4d8; margin-bottom: 16px; }
+.serv-card__title { font-size: 17px; font-weight: 700; color: #0a2a4a; margin-bottom: 10px; }
+.serv-card__text { font-size: 14px; color: #5a6b7e; line-height: 1.7; margin: 0; }
 
 /* ── FLOTILLA ── */
-.flot-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.flot-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  max-width: 1000px; margin: 0 auto;
+}
 .flot-card {
-  padding: 32px 16px; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 36px 20px; border-radius: 14px;
   background: #fff; border: 1px solid #e8ecf1;
   text-align: center; transition: all 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
-.flot-card:hover { border-color: #00b4d8; box-shadow: 0 8px 28px rgba(0,180,216,0.1); transform: translateY(-3px); }
-.flot-card__cap {
-  font-family: 'Playfair Display', serif;
-  font-size: 50px; font-weight: 700; color: #0a2a4a; line-height: 1;
-}
-.flot-card__ton { font-size: 20px; font-weight: 400; color: #00b4d8; }
-.flot-card__bar { width: 32px; height: 3px; background: #00b4d8; border-radius: 2px; margin: 14px auto; }
-.flot-card__name { font-size: 14px; font-weight: 700; color: #0a2a4a; margin: 0 0 6px; }
-.flot-card__modes { font-size: 12px; color: #8a919a; margin: 0; line-height: 1.5; }
+.flot-card:hover { border-color: #00b4d8; box-shadow: 0 8px 28px rgba(0,180,216,0.08); transform: translateY(-3px); }
+.flot-card__count { font-size: 36px; font-weight: 800; color: #00b4d8; line-height: 1; }
+.flot-card__label { font-size: 15px; font-weight: 600; color: #0a2a4a; margin-top: 10px; }
+.flot-card__detail { font-size: 13px; color: #7a8b9e; margin-top: 6px; }
 
-/* ── SECTORES ── */
-.sector-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+/* ── SECTORS ── */
+.sector-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
+  max-width: 1000px; margin: 40px auto 0;
+}
 .sector-card {
   display: flex; flex-direction: column; align-items: center; gap: 14px;
   padding: 40px 20px; border-radius: 12px;
@@ -725,9 +713,10 @@ body { margin: 0; -webkit-font-smoothing: antialiased; }
 .sector-card:hover .sector-card__icon { color: #00b4d8; }
 .sector-card__name { font-size: 14px; font-weight: 600; color: #0a2a4a; text-align: center; }
 
-/* ── CONTACTO (REDESIGNED) ── */
+/* ── CONTACTO ── */
 .contact-layout {
   display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: start;
+  max-width: 1100px; margin: 40px auto 0;
 }
 .contact-cards { display: flex; flex-direction: column; gap: 16px; }
 .contact-tab {
@@ -821,7 +810,12 @@ body { margin: 0; -webkit-font-smoothing: antialiased; }
   flex-wrap: wrap; gap: 24px; padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.footer__logo { display: flex; align-items: center; gap: 10px; }
+.footer__logo {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+}
+.footer__logo-img {
+  height: 36px; width: auto; object-fit: contain;
+}
 .footer__links { display: flex; gap: 6px; flex-wrap: wrap; }
 .footer__link {
   background: none; border: none; color: rgba(255,255,255,0.35);
@@ -850,6 +844,8 @@ body { margin: 0; -webkit-font-smoothing: antialiased; }
   .counter-row { flex-direction: column; }
   .section { padding: 70px 20px; }
   .hero { padding: 100px 20px 70px; }
+  .cert-bar__inner { gap: 16px; }
+  .cert-badge { padding: 10px 16px; }
 }
 
 /* ── SCROLLBAR ── */
