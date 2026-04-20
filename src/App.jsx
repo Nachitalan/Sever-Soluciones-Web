@@ -82,6 +82,9 @@ const I = {
   chip: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/></svg>,
   whatsapp: <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>,
   atSymbol: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"/></svg>,
+  facebook: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>,
+  linkedin: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>,
+  instagram: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>,
 };
 
 /* ══════════════════════════
@@ -99,40 +102,91 @@ const CERTIFICATIONS = [
    ══════════════════════════ */
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [cRef, cVis] = useInView();
   const tripCount = useCountUp(COUNTERS.tripsCompleted, 2200, cVis);
-  const [form, setForm] = useState({ nombre: "", apellido: "", email: "", telefono: "", mensaje: "" });
+  const [form, setForm] = useState({ nombre: "", apellido: "", email: "", telefono: "", mensaje: "", departamento: "ventas" });
   const [sent, setSent] = useState(false);
   const [activeTab, setActiveTab] = useState("ventas");
 
   useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40);
+    const h = () => { /* reserved for future scroll-based effects */ };
     window.addEventListener("scroll", h, { passive: true });
     return () => window.removeEventListener("scroll", h);
   }, []);
 
   const go = (id) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ nombre: "", apellido: "", email: "", telefono: "", mensaje: "" });
+  const DEPT_EMAILS = {
+    ventas: { email: "gerencia.ventas@s-sever.com", label: "Ventas" },
+    rh:     { email: "recursoshumanos@s-sever.com", label: "Recursos Humanos" },
   };
 
-  const links = [
-    { l: "Inicio", id: "hero" }, { l: "Nosotros", id: "nosotros" },
-    { l: "Servicios", id: "servicios" }, { l: "Flotilla", id: "flotilla" },
-    { l: "Sectores", id: "sectores" }, { l: "Contacto", id: "contacto" },
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const dept = DEPT_EMAILS[form.departamento] || DEPT_EMAILS.ventas;
+    const subject = `Contacto desde sitio web — ${dept.label} — ${form.nombre} ${form.apellido}`;
+    const bodyLines = [
+      `Nombre: ${form.nombre} ${form.apellido}`,
+      `Email: ${form.email}`,
+      `Telefono: ${form.telefono || "(no proporcionado)"}`,
+      `Departamento: ${dept.label}`,
+      ``,
+      `Mensaje:`,
+      form.mensaje,
+      ``,
+      `---`,
+      `Enviado desde solucionessever.com`,
+    ];
+    const mailto = `mailto:${dept.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    window.location.href = mailto;
+
+    setSent(true);
+    setTimeout(() => setSent(false), 5000);
+    setForm({ nombre: "", apellido: "", email: "", telefono: "", mensaje: "", departamento: form.departamento });
+  };
+
+  const NAV_STRUCTURE = [
+    { type: "link", label: "Nosotros", target: "nosotros" },
+    {
+      type: "dropdown",
+      label: "Servicios",
+      target: "servicios",
+      items: [
+        { label: "Transporte Local", target: "servicios" },
+        { label: "Transporte Foraneo", target: "servicios" },
+        { label: "Transporte a Frontera", target: "servicios" },
+        { label: "Refrigerado / Congelado", target: "servicios" },
+        { label: "Nuestra Flotilla", target: "flotilla" },
+      ],
+    },
+    { type: "link", label: "Sectores", target: "sectores" },
+    { type: "link", label: "Sostenibilidad", target: "sostenibilidad" },
+    { type: "link", label: "Clientes", target: "clientes" },
+    { type: "link", label: "Bolsa de Trabajo", target: "bolsa-trabajo" },
+    { type: "link", label: "Contacto", target: "contacto" },
   ];
+
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const onClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpenDropdown(null);
+      }
+    };
+    if (openDropdown !== null) {
+      document.addEventListener("mousedown", onClickOutside);
+      return () => document.removeEventListener("mousedown", onClickOutside);
+    }
+  }, [openDropdown]);
 
   return (
     <div className="sever-root">
       <style>{CSS}</style>
 
-      {/* ═══ NAV ═══ */}
-      <nav className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+      {/* ═══ NAV — Traxion-style solid bar ═══ */}
+      <nav className="nav">
         <div className="nav__inner">
           <div className="nav__logo" onClick={() => go("hero")}>
             <img
@@ -142,11 +196,50 @@ export default function App() {
             />
             <div>
               <div className="nav__logo-text">SEVER</div>
-              <div className="nav__logo-sub">Soluciones Logisticas</div>
+              <div className="nav__logo-sub">SOLUCIONES LOGISTICAS</div>
             </div>
           </div>
-          <div className="nav__links">
-            {links.map(l => <button key={l.id} onClick={() => go(l.id)} className="nav__link">{l.l}</button>)}
+          <div className="nav__links" ref={dropdownRef}>
+            {NAV_STRUCTURE.map((item, idx) => {
+              if (item.type === "dropdown") {
+                const isOpen = openDropdown === idx;
+                return (
+                  <div key={item.label} className="nav__dropdown-wrap">
+                    <button
+                      className={`nav__link nav__link--dropdown ${isOpen ? "nav__link--active" : ""}`}
+                      onClick={() => setOpenDropdown(isOpen ? null : idx)}
+                      aria-expanded={isOpen}
+                    >
+                      {item.label}
+                      <svg
+                        width="12" height="12" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" strokeWidth="2.5"
+                        strokeLinecap="round" strokeLinejoin="round"
+                        style={{ marginLeft: 5, transition: "transform .2s", transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}
+                      ><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    {isOpen && (
+                      <div className="nav__dropdown">
+                        {item.items.map((sub) => (
+                          <button
+                            key={sub.label}
+                            className="nav__dropdown-item"
+                            onClick={() => { setOpenDropdown(null); go(sub.target); }}
+                          >
+                            {sub.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              return (
+                <button key={item.target} onClick={() => go(item.target)} className="nav__link">
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
           <button className="nav__cta" onClick={() => go("contacto")}>Solicitar Cotizacion</button>
           <button className="nav__hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -157,10 +250,27 @@ export default function App() {
 
       {menuOpen && (
         <div className="mobile-menu">
-          {links.map(l => <button key={l.id} onClick={() => go(l.id)} className="mobile-menu__link">{l.l}</button>)}
+          {NAV_STRUCTURE.map((item) => {
+            if (item.type === "dropdown") {
+              return (
+                <div key={item.label} className="mobile-menu__group">
+                  <div className="mobile-menu__group-title">{item.label}</div>
+                  {item.items.map((sub) => (
+                    <button key={sub.label} onClick={() => go(sub.target)} className="mobile-menu__link mobile-menu__link--sub">
+                      {sub.label}
+                    </button>
+                  ))}
+                </div>
+              );
+            }
+            return (
+              <button key={item.target} onClick={() => go(item.target)} className="mobile-menu__link">{item.label}</button>
+            );
+          })}
           <button className="nav__cta" onClick={() => go("contacto")} style={{ marginTop: 12, width: "100%" }}>Solicitar Cotizacion</button>
         </div>
       )}
+
 
       {/* ═══ HERO ═══ */}
       <section id="hero" className="hero">
@@ -293,20 +403,34 @@ export default function App() {
         </Reveal>
         <div className="flot-grid">
           {[
-            { label: "Tractocamiones", count: "30+", detail: "Unidades de ultima generacion" },
-            { label: "Cajas Secas", count: "40+", detail: "53 pies de capacidad" },
-            { label: "Plataformas", count: "15+", detail: "Para carga sobredimensionada" },
-            { label: "Cajas Refrigeradas", count: "10+", detail: "Con control de temperatura" },
+            { label: "Tractocamiones", count: "30+", detail: "Unidades de ultima generacion con motores de alta eficiencia, cabinas con tecnologia avanzada de asistencia al conductor y mantenimiento preventivo riguroso." },
+            { label: "Cajas Secas", count: "40+", detail: "53 pies de capacidad, ideales para carga general paletizada. Equipadas con sellos de seguridad y rastreo GPS permanente." },
+            { label: "Plataformas", count: "15+", detail: "Para carga sobredimensionada, maquinaria pesada y transporte industrial especializado con amarres certificados." },
+            { label: "Cajas Refrigeradas", count: "10+", detail: "Con control de temperatura preciso para cadena de frio, ideal para productos perecederos y farmaceuticos." },
           ].map((f, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <div className="flot-card">
-                <span className="flot-card__count">{f.count}</span>
-                <span className="flot-card__label">{f.label}</span>
-                <span className="flot-card__detail">{f.detail}</span>
+                <div className="flot-card__image">
+                  <div className="flot-card__image-placeholder">
+                    {I.truck}
+                    <span>Imagen</span>
+                  </div>
+                </div>
+                <div className="flot-card__body">
+                  <span className="flot-card__count">{f.count}</span>
+                  <span className="flot-card__label">{f.label}</span>
+                  <span className="flot-card__detail">{f.detail}</span>
+                </div>
               </div>
             </Reveal>
           ))}
         </div>
+        <Reveal>
+          <div className="placeholder-notice">
+            <span className="placeholder-notice__dot" />
+            Proximamente: galeria fotografica real de cada tipo de unidad con especificaciones tecnicas detalladas.
+          </div>
+        </Reveal>
       </section>
 
       {/* ═══ SECTORES ═══ */}
@@ -331,6 +455,156 @@ export default function App() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* ═══ SOSTENIBILIDAD (placeholder) ═══ */}
+      <section id="sostenibilidad" className="section section--light">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>SOSTENIBILIDAD</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Compromiso con el Medio Ambiente</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 48px" }}>
+            En Soluciones Sever trabajamos bajo los lineamientos del programa Transporte Limpio de la SEMARNAT,
+            reduciendo emisiones y adoptando practicas responsables en cada operacion.
+          </p>
+        </Reveal>
+        <div className="susten-grid">
+          {[
+            { title: "Transporte Limpio", desc: "Certificados por SEMARNAT con compromiso de medicion y reduccion continua de emisiones contaminantes." },
+            { title: "Flotilla Eficiente", desc: "Unidades modernas con tecnologias de bajo consumo y monitoreo de rendimiento de combustible." },
+            { title: "Operacion Responsable", desc: "Capacitacion continua en manejo eficiente, mantenimiento preventivo y cultura ambiental." },
+          ].map((card, i) => (
+            <Reveal key={i} delay={i * 0.08}>
+              <div className="susten-card">
+                <div className="susten-card__badge">{String(i + 1).padStart(2, "0")}</div>
+                <h3 className="susten-card__title">{card.title}</h3>
+                <p className="susten-card__text">{card.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal>
+          <div className="placeholder-notice">
+            <span className="placeholder-notice__dot" />
+            Proximamente: reporte anual de sostenibilidad, indicadores de reduccion de CO2 y certificaciones ambientales ampliadas.
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ═══ CLIENTES (placeholder) ═══ */}
+      <section id="clientes" className="section section--white">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>CLIENTES</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Quienes confian en nosotros</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
+            Acompanamos a grandes cadenas comerciales, laboratorios farmaceuticos y empresas manufactureras en su operacion diaria.
+          </p>
+        </Reveal>
+        <div className="clients-grid">
+          {[
+            { name: "WALMART", sector: "Autoservicio" },
+            { name: "PISA", sector: "Farmaceutica" },
+            { name: "SORIANA", sector: "Autoservicio" },
+            { name: "BIMBO", sector: "Alimentos" },
+            { name: "CHEDRAUI", sector: "Autoservicio" },
+            { name: "NESTLE", sector: "Alimentos" },
+            { name: "COCA-COLA", sector: "Bebidas" },
+            { name: "LA COMER", sector: "Autoservicio" },
+          ].map((c, i) => (
+            <Reveal key={i} delay={i * 0.04}>
+              <div className="client-logo-card">
+                <div className="client-logo-card__placeholder">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  <span className="client-logo-card__name">{c.name}</span>
+                  <span className="client-logo-card__sector">{c.sector}</span>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal>
+          <div className="placeholder-notice">
+            <span className="placeholder-notice__dot" />
+            Los nombres mostrados son de ejemplo. Proximamente apareceran los logos reales de clientes con autorizacion publicada.
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ═══ BOLSA DE TRABAJO (placeholder) ═══ */}
+      <section id="bolsa-trabajo" className="section section--light">
+        <div className="bolsa-layout">
+          <Reveal>
+            <div className="bolsa-left">
+              <p className="section__label">BOLSA DE TRABAJO</p>
+              <h2 className="section__title">Unete al<br/>Equipo Sever</h2>
+              <p className="section__text">
+                Somos una empresa que crece con su gente. Si buscas formar parte de un equipo profesional
+                comprometido con la excelencia operativa y la seguridad, queremos conocerte.
+              </p>
+              <div className="bolsa-perks">
+                {["Estabilidad laboral", "Capacitacion continua", "Prestaciones superiores", "Ambiente colaborativo"].map((p, i) => (
+                  <div key={i} className="bolsa-perk">
+                    <span className="bolsa-perk__check">{I.arrow}</span>
+                    <span>{p}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bolsa-cta">
+                <a
+                  href={`mailto:recursoshumanos@s-sever.com?subject=${encodeURIComponent("Envio de CV - Bolsa de Trabajo")}`}
+                  className="btn btn--primary"
+                >
+                  Enviar mi CV {I.arrow}
+                </a>
+                <span className="bolsa-cta__or">o</span>
+                <a href="tel:+523312945392" className="btn btn--outline-dark">
+                  Llamar a RH
+                </a>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="bolsa-right">
+              <div className="vacancy-panel">
+                <div className="vacancy-panel__header">
+                  <span className="vacancy-panel__title">Vacantes Disponibles</span>
+                  <span className="vacancy-panel__badge">Ejemplo</span>
+                </div>
+                <div className="vacancy-list">
+                  {[
+                    { role: "Operador de Tractocamion", type: "Tiempo completo", location: "Guadalajara, Jal.", exp: "3+ anos" },
+                    { role: "Auxiliar de Logistica", type: "Tiempo completo", location: "Monterrey, N.L.", exp: "1-2 anos" },
+                    { role: "Coordinador de Operaciones", type: "Tiempo completo", location: "Guadalajara, Jal.", exp: "5+ anos" },
+                    { role: "Ejecutivo de Ventas", type: "Tiempo completo", location: "Hibrido", exp: "2+ anos" },
+                  ].map((v, i) => (
+                    <div key={i} className="vacancy-item">
+                      <div className="vacancy-item__main">
+                        <h4 className="vacancy-item__role">{v.role}</h4>
+                        <div className="vacancy-item__meta">
+                          <span>{v.type}</span>
+                          <span className="vacancy-item__dot" />
+                          <span>{v.location}</span>
+                          <span className="vacancy-item__dot" />
+                          <span>{v.exp}</span>
+                        </div>
+                      </div>
+                      <a
+                        href={`mailto:recursoshumanos@s-sever.com?subject=${encodeURIComponent(`Postulacion: ${v.role}`)}`}
+                        className="vacancy-item__btn"
+                        aria-label={`Postular a ${v.role}`}
+                      >
+                        {I.arrow}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+                <div className="vacancy-footer">
+                  <span className="vacancy-footer__label">Vacantes de ejemplo</span>
+                  <span className="vacancy-footer__text">El listado real sera gestionado por Recursos Humanos.</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -397,11 +671,29 @@ export default function App() {
             {sent ? (
               <div className="form-success">
                 <div className="form-success__check">✓</div>
-                <p className="form-success__title">Mensaje Enviado</p>
-                <p className="form-success__text">Nos pondremos en contacto contigo pronto.</p>
+                <p className="form-success__title">Abriendo tu correo...</p>
+                <p className="form-success__text">Se abrio tu cliente de correo con el mensaje listo para <strong>{DEPT_EMAILS[form.departamento].label}</strong>. Solo confirma el envio.</p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label className="form-label">Departamento</label>
+                  <div className="dept-selector">
+                    {Object.entries(DEPT_EMAILS).map(([key, d]) => (
+                      <button
+                        type="button"
+                        key={key}
+                        className={`dept-pill ${form.departamento === key ? "dept-pill--active" : ""}`}
+                        onClick={() => setForm({ ...form, departamento: key })}
+                      >
+                        <span className="dept-pill__icon">
+                          {key === "ventas" ? I.phone : I.user}
+                        </span>
+                        <span>{d.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Nombre</label>
@@ -424,9 +716,12 @@ export default function App() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Mensaje</label>
-                  <textarea className="form-input form-input--ta" placeholder="¿En que podemos ayudarte?" value={form.mensaje} onChange={e => setForm({ ...form, mensaje: e.target.value })} required />
+                  <textarea className="form-input form-input--ta" placeholder={form.departamento === "ventas" ? "Describe tu necesidad de transporte o solicita una cotizacion..." : "Cuentanos sobre tu perfil profesional o interes en postularte..."} value={form.mensaje} onChange={e => setForm({ ...form, mensaje: e.target.value })} required />
                 </div>
-                <button type="submit" className="btn btn--primary" style={{ width: "100%" }}>Enviar Mensaje {I.arrow}</button>
+                <button type="submit" className="btn btn--primary" style={{ width: "100%" }}>
+                  Enviar a {DEPT_EMAILS[form.departamento].label} {I.arrow}
+                </button>
+                <p className="form-note">Al enviar se abrira tu cliente de correo con el mensaje pre-llenado.</p>
               </form>
             )}
           </div>
@@ -457,25 +752,80 @@ export default function App() {
 
       {/* ═══ FOOTER ═══ */}
       <footer className="footer">
-        <div className="footer__inner">
-          <div className="footer__logo" onClick={() => go("hero")}>
-            <img
-              src="/logo-light.png"
-              alt="Soluciones Sever"
-              className="footer__logo-img"
-              onError={(e) => { e.target.style.display = 'none'; }}
-            />
-            <div>
-              <div className="nav__logo-text" style={{ color: "#fff" }}>SEVER</div>
-              <div className="nav__logo-sub" style={{ color: "rgba(255,255,255,0.4)" }}>Soluciones Logisticas</div>
+        <div className="footer__main">
+          <div className="footer__col footer__col--brand">
+            <div className="footer__logo" onClick={() => go("hero")}>
+              <img
+                src="/sever-logo.png"
+                alt="Soluciones Sever"
+                className="footer__logo-img"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+              <div>
+                <div className="nav__logo-text" style={{ color: "#fff" }}>SEVER</div>
+                <div className="nav__logo-sub" style={{ color: "rgba(255,255,255,0.5)" }}>SOLUCIONES LOGISTICAS</div>
+              </div>
+            </div>
+            <p className="footer__tagline">
+              Servicio especializado de autotransporte local, foraneo y a frontera con EUA. En ruta desde 2013.
+            </p>
+            <div className="footer__social">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="Facebook">{I.facebook}</a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="LinkedIn">{I.linkedin}</a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="Instagram">{I.instagram}</a>
+              <a href={`https://wa.me/${FLOATING_CONTACT.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="WhatsApp">{I.whatsapp}</a>
             </div>
           </div>
-          <div className="footer__links">
-            {links.map(l => <button key={l.id} onClick={() => go(l.id)} className="footer__link">{l.l}</button>)}
+
+          <div className="footer__col">
+            <h4 className="footer__col-title">Navegacion</h4>
+            <div className="footer__list">
+              {NAV_STRUCTURE.map((item) => (
+                <button key={item.label} onClick={() => go(item.target)} className="footer__link">{item.label}</button>
+              ))}
+            </div>
+          </div>
+
+          <div className="footer__col">
+            <h4 className="footer__col-title">Contacto</h4>
+            <div className="footer__list">
+              <div className="footer__contact-group">
+                <span className="footer__contact-label">Ventas</span>
+                <a href="tel:+528119103303" className="footer__link-static">+52 81 1910 3303</a>
+                <a href="mailto:gerencia.ventas@s-sever.com" className="footer__link-static">gerencia.ventas@s-sever.com</a>
+              </div>
+              <div className="footer__contact-group">
+                <span className="footer__contact-label">Recursos Humanos</span>
+                <a href="tel:+523312945392" className="footer__link-static">+52 33 1294 5392</a>
+                <a href="mailto:recursoshumanos@s-sever.com" className="footer__link-static">recursoshumanos@s-sever.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer__col">
+            <h4 className="footer__col-title">Ubicacion</h4>
+            <div className="footer__list">
+              <div className="footer__contact-group">
+                <span className="footer__contact-label">Oficinas</span>
+                <span className="footer__link-static">Guadalajara, Jalisco</span>
+                <span className="footer__link-static">Monterrey, Nuevo Leon</span>
+              </div>
+              <div className="footer__contact-group">
+                <span className="footer__contact-label">Horario</span>
+                <span className="footer__link-static">Lun - Vie: 8:00 - 18:00</span>
+                <span className="footer__link-static">Sab: 9:00 - 14:00</span>
+              </div>
+            </div>
           </div>
         </div>
+
         <div className="footer__bar">
-          © {new Date().getFullYear()} Soluciones Sever. Todos los derechos reservados.
+          <span>© {new Date().getFullYear()} Soluciones Sever. Todos los derechos reservados.</span>
+          <span className="footer__bar-links">
+            <a href="#" className="footer__bar-link">Aviso de Privacidad</a>
+            <span className="footer__bar-sep">·</span>
+            <a href="#" className="footer__bar-link">Terminos y Condiciones</a>
+          </span>
         </div>
       </footer>
     </div>
@@ -497,79 +847,171 @@ img { max-width: 100%; height: auto; }
 /* ── NAV ── */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 16px 24px;
-  transition: all 0.35s cubic-bezier(.16,1,.3,1);
-}
-.nav--scrolled {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-  padding: 10px 24px;
+  padding: 0 24px;
+  background: #0a2a4a;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav__inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: 1400px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
+  height: 76px;
 }
 .nav__logo {
-  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  display: flex; align-items: center; gap: 12px; cursor: pointer;
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  margin-right: 8px;
 }
 .nav__logo-img {
-  height: 40px;
+  height: 42px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  transition: filter 0.35s;
-}
-.nav--scrolled .nav__logo-img {
-  filter: none;
 }
 .nav__logo-text {
-  font-size: 18px; font-weight: 800; color: #fff;
-  letter-spacing: 0.12em; line-height: 1.1;
-  transition: color 0.35s;
+  font-size: 20px; font-weight: 800; color: #fff;
+  letter-spacing: 0.14em; line-height: 1;
 }
-.nav--scrolled .nav__logo-text { color: #0a2a4a; }
 .nav__logo-sub {
-  font-size: 9px; color: rgba(255,255,255,0.6);
-  letter-spacing: 0.06em; text-transform: uppercase;
-  transition: color 0.35s;
+  font-size: 9px; color: rgba(255,255,255,0.5);
+  letter-spacing: 0.14em; font-weight: 500;
+  margin-top: 4px;
 }
-.nav--scrolled .nav__logo-sub { color: #7a8b9e; }
-.nav__links { display: flex; gap: 4px; }
+.nav__links {
+  display: flex; gap: 2px; align-items: center; flex: 1; justify-content: flex-end;
+  margin-right: 16px;
+}
 .nav__link {
-  background: none; border: none; color: rgba(255,255,255,0.75);
+  position: relative;
+  background: none; border: none; color: rgba(255,255,255,0.82);
   font-size: 14px; font-weight: 500; cursor: pointer;
-  font-family: inherit; padding: 8px 14px; border-radius: 6px;
-  transition: all 0.2s;
+  font-family: inherit; padding: 10px 14px; border-radius: 0;
+  transition: color 0.2s;
+  display: inline-flex; align-items: center;
+  letter-spacing: 0.01em;
 }
-.nav__link:hover { color: #fff; background: rgba(255,255,255,0.1); }
-.nav--scrolled .nav__link { color: #5a6b7e; }
-.nav--scrolled .nav__link:hover { color: #0a2a4a; background: rgba(10,42,74,0.05); }
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: #00b4d8;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(.16,1,.3,1);
+}
+.nav__link:hover { color: #fff; }
+.nav__link:hover::after { transform: scaleX(1); }
+.nav__link--active { color: #fff; }
+.nav__link--active::after { transform: scaleX(1); }
+
+/* Dropdown */
+.nav__dropdown-wrap { position: relative; }
+.nav__link--dropdown { gap: 2px; }
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  padding: 8px;
+  display: flex; flex-direction: column;
+  border: 1px solid #e8ecf1;
+  z-index: 120;
+  animation: ddIn 0.22s cubic-bezier(.16,1,.3,1);
+}
+@keyframes ddIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.nav__dropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: #fff;
+  border-left: 1px solid #e8ecf1;
+  border-top: 1px solid #e8ecf1;
+}
+.nav__dropdown-item {
+  background: none; border: none; text-align: left;
+  padding: 11px 16px; border-radius: 6px;
+  font-size: 14px; font-weight: 500; color: #0a2a4a;
+  cursor: pointer; font-family: inherit;
+  transition: all 0.18s;
+  display: flex; align-items: center;
+}
+.nav__dropdown-item::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #e8ecf1;
+  margin-right: 10px;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+.nav__dropdown-item:hover {
+  background: #f0f9fc;
+  color: #00b4d8;
+}
+.nav__dropdown-item:hover::before {
+  background: #00b4d8;
+  transform: scale(1.3);
+}
+
 .nav__cta {
   background: #00b4d8; color: #fff; border: none;
-  padding: 10px 22px; border-radius: 8px;
-  font-size: 14px; font-weight: 600; cursor: pointer;
+  padding: 11px 22px; border-radius: 6px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
   font-family: inherit; transition: all 0.25s;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
-.nav__cta:hover { background: #0096b7; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,180,216,0.3); }
+.nav__cta:hover { background: #0096b7; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,180,216,0.35); }
 .nav__hamburger {
   display: none; background: none; border: none;
-  color: #fff; cursor: pointer;
+  color: #fff; cursor: pointer; padding: 4px;
 }
-.nav--scrolled .nav__hamburger { color: #0a2a4a; }
 
 /* ── MOBILE MENU ── */
 .mobile-menu {
-  position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  position: fixed; top: 76px; left: 0; right: 0; z-index: 99;
+  background: #0a2a4a;
   padding: 20px 24px; display: flex; flex-direction: column;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  max-height: calc(100vh - 76px);
+  overflow-y: auto;
 }
 .mobile-menu__link {
   background: none; border: none; text-align: left;
   padding: 14px 0; font-size: 16px; font-weight: 500;
-  color: #0a2a4a; cursor: pointer; font-family: inherit;
-  border-bottom: 1px solid #f0f2f5;
+  color: #fff; cursor: pointer; font-family: inherit;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.mobile-menu__link--sub {
+  padding-left: 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.mobile-menu__group {
+  display: flex; flex-direction: column;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 0;
+}
+.mobile-menu__group-title {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+  color: #00b4d8; text-transform: uppercase;
+  padding: 8px 0;
+}
+.mobile-menu__group .mobile-menu__link--sub {
+  border-bottom: none;
+  padding: 10px 0 10px 16px;
 }
 
 /* ── HERO ── */
@@ -717,19 +1159,66 @@ img { max-width: 100%; height: auto; }
 /* ── FLOTILLA ── */
 .flot-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-  max-width: 1000px; margin: 0 auto;
+  max-width: 1200px; margin: 0 auto;
 }
 .flot-card {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 36px 20px; border-radius: 14px;
+  display: flex; flex-direction: column;
+  border-radius: 14px; overflow: hidden;
   background: #fff; border: 1px solid #e8ecf1;
-  text-align: center; transition: all 0.3s;
+  transition: all 0.3s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
-.flot-card:hover { border-color: #00b4d8; box-shadow: 0 8px 28px rgba(0,180,216,0.08); transform: translateY(-3px); }
-.flot-card__count { font-size: 36px; font-weight: 800; color: #00b4d8; line-height: 1; }
-.flot-card__label { font-size: 15px; font-weight: 600; color: #0a2a4a; margin-top: 10px; }
-.flot-card__detail { font-size: 13px; color: #7a8b9e; margin-top: 6px; }
+.flot-card:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 14px 36px rgba(0,180,216,0.12);
+  transform: translateY(-3px);
+}
+.flot-card__image {
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #eef3f7 0%, #dde5ee 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.flot-card__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(0,180,216,0.08) 0%, transparent 70%);
+}
+.flot-card__image-placeholder {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: #a7b5c4;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  position: relative; z-index: 1;
+}
+.flot-card__image-placeholder svg {
+  width: 44px; height: 44px;
+  opacity: 0.6;
+}
+.flot-card:hover .flot-card__image-placeholder {
+  color: #00b4d8;
+}
+.flot-card__body {
+  padding: 24px 22px 26px;
+  display: flex; flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+.flot-card__count {
+  font-size: 34px; font-weight: 800; color: #00b4d8;
+  line-height: 1;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+.flot-card__label {
+  font-size: 16px; font-weight: 700; color: #0a2a4a;
+  margin-top: 8px;
+}
+.flot-card__detail {
+  font-size: 13px; color: #6a7b91;
+  margin-top: 6px; line-height: 1.55;
+}
 
 /* ── SECTORS ── */
 .sector-grid {
@@ -827,6 +1316,46 @@ img { max-width: 100%; height: auto; }
 .form-input::placeholder { color: rgba(255,255,255,0.2); }
 .form-input:focus { border-color: #00b4d8; box-shadow: 0 0 0 3px rgba(0,180,216,0.1); }
 .form-input--ta { resize: vertical; min-height: 100px; }
+
+/* Department selector */
+.dept-selector {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.dept-pill {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 16px; border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(.16,1,.3,1);
+}
+.dept-pill__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.22s;
+}
+.dept-pill__icon svg { width: 18px; height: 18px; }
+.dept-pill:hover {
+  background: rgba(0,180,216,0.08);
+  border-color: rgba(0,180,216,0.25);
+  color: #fff;
+}
+.dept-pill--active {
+  background: rgba(0,180,216,0.15);
+  border-color: #00b4d8;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,180,216,0.2);
+}
+.dept-pill--active .dept-pill__icon { color: #00b4d8; }
+.form-note {
+  font-size: 11.5px; color: rgba(255,255,255,0.4);
+  text-align: center; margin: 4px 0 0;
+  font-style: italic;
+}
+
 .form-success { text-align: center; padding: 50px 20px; }
 .form-success__check {
   width: 60px; height: 60px; border-radius: 50%;
@@ -835,33 +1364,404 @@ img { max-width: 100%; height: auto; }
   font-size: 30px; font-weight: 700; margin-bottom: 16px;
 }
 .form-success__title { font-size: 22px; font-weight: 700; color: #fff; margin: 0 0 6px; }
-.form-success__text { font-size: 15px; color: rgba(255,255,255,0.6); margin: 0; }
+.form-success__text { font-size: 15px; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.5; }
+.form-success__text strong { color: #00b4d8; font-weight: 700; }
 
 /* ── FOOTER ── */
-.footer { background: #061525; padding: 48px 24px 0; }
-.footer__inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 24px; padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+.footer {
+  background: #061525;
+  padding: 60px 24px 0;
+  color: #fff;
 }
+.footer__main {
+  max-width: 1400px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer__col { display: flex; flex-direction: column; gap: 18px; }
+.footer__col--brand { max-width: 380px; }
 .footer__logo {
-  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  display: flex; align-items: center; gap: 12px;
+  cursor: pointer; width: fit-content;
 }
 .footer__logo-img {
-  height: 36px; width: auto; object-fit: contain;
+  height: 42px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1);
 }
-.footer__links { display: flex; gap: 6px; flex-wrap: wrap; }
+.footer__tagline {
+  font-size: 14px; line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  max-width: 320px;
+}
+.footer__social {
+  display: flex; gap: 10px; margin-top: 4px;
+}
+.footer__social-btn {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(.16,1,.3,1);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.footer__social-btn:hover {
+  background: #00b4d8;
+  color: #fff;
+  border-color: #00b4d8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,180,216,0.3);
+}
+.footer__col-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #00b4d8;
+  margin: 0 0 4px;
+}
+.footer__list {
+  display: flex; flex-direction: column; gap: 8px;
+}
 .footer__link {
-  background: none; border: none; color: rgba(255,255,255,0.35);
-  font-size: 13px; cursor: pointer; font-family: inherit; padding: 6px 10px;
-  text-decoration: none; transition: color 0.2s;
+  background: none; border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px; font-weight: 400;
+  cursor: pointer; font-family: inherit;
+  padding: 0; text-align: left;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  align-self: flex-start;
 }
-.footer__link:hover { color: rgba(255,255,255,0.7); }
+.footer__link:hover {
+  color: #00b4d8;
+  transform: translateX(3px);
+}
+.footer__link-static {
+  color: rgba(255,255,255,0.6);
+  font-size: 13.5px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a.footer__link-static:hover { color: #00b4d8; }
+.footer__contact-group {
+  display: flex; flex-direction: column; gap: 3px;
+  margin-bottom: 8px;
+}
+.footer__contact-label {
+  font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
 .footer__bar {
-  max-width: 1200px; margin: 0 auto; padding: 20px 0;
-  text-align: center; font-size: 12px; color: rgba(255,255,255,0.2);
+  max-width: 1400px; margin: 0 auto;
+  padding: 22px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 14px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
 }
+.footer__bar-links {
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.footer__bar-link {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 12.5px;
+  transition: color 0.2s;
+}
+.footer__bar-link:hover { color: #00b4d8; }
+.footer__bar-sep { color: rgba(255,255,255,0.2); }
+
+/* ── PLACEHOLDER NOTICE (shared) ── */
+.placeholder-notice {
+  display: flex; align-items: center; gap: 10px;
+  max-width: 780px; margin: 40px auto 0;
+  padding: 14px 22px;
+  background: rgba(0,180,216,0.06);
+  border: 1px dashed rgba(0,180,216,0.35);
+  border-radius: 10px;
+  font-size: 13px;
+  color: #5a6b7e;
+  justify-content: center;
+  text-align: center;
+}
+.placeholder-notice__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #00b4d8;
+  flex-shrink: 0;
+  animation: noticePulse 1.8s ease-in-out infinite;
+}
+@keyframes noticePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* ── SOSTENIBILIDAD ── */
+.susten-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; max-width: 1100px; margin: 0 auto;
+}
+.susten-card {
+  position: relative;
+  padding: 40px 28px 32px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8ecf1;
+  transition: all 0.3s;
+}
+.susten-card:hover {
+  border-color: rgba(0,180,216,0.25);
+  box-shadow: 0 12px 36px rgba(0,180,216,0.08);
+  transform: translateY(-3px);
+}
+.susten-card__badge {
+  position: absolute;
+  top: 20px; right: 22px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 42px; font-weight: 700;
+  color: rgba(0,180,216,0.15);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.susten-card__title {
+  font-size: 19px; font-weight: 700; color: #0a2a4a;
+  margin: 0 0 12px;
+  max-width: 70%;
+}
+.susten-card__text {
+  font-size: 14px; line-height: 1.65; color: #5a6b7e;
+  margin: 0;
+}
+
+/* ── CLIENTES ── */
+.clients-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; max-width: 1100px; margin: 0 auto;
+}
+.client-logo-card {
+  aspect-ratio: 16/9;
+  background: #fff;
+  border: 1px solid #e8ecf1;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+  padding: 14px;
+}
+.client-logo-card:hover {
+  border-color: rgba(0,180,216,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,180,216,0.08);
+}
+.client-logo-card__placeholder {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  color: #a7b5c4;
+  transition: color 0.3s;
+}
+.client-logo-card:hover .client-logo-card__placeholder {
+  color: #00b4d8;
+}
+.client-logo-card__placeholder svg {
+  margin-bottom: 4px;
+  opacity: 0.6;
+}
+.client-logo-card__name {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0a2a4a;
+}
+.client-logo-card:hover .client-logo-card__name {
+  color: #00b4d8;
+}
+.client-logo-card__sector {
+  font-size: 10px;
+  color: #8a9cad;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ── BOLSA DE TRABAJO ── */
+.bolsa-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; max-width: 1100px; margin: 0 auto;
+  align-items: center;
+}
+.bolsa-perks {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin: 24px 0 32px;
+}
+.bolsa-perk {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: #3a4a5e; font-weight: 500;
+}
+.bolsa-perk__check {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(0,180,216,0.1);
+  color: #00b4d8;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.bolsa-perk__check svg { width: 13px; height: 13px; }
+.bolsa-cta {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.bolsa-cta__or {
+  font-size: 13px; color: #8a9cad; text-transform: uppercase;
+  letter-spacing: 0.12em; font-weight: 600;
+}
+.btn--outline-dark {
+  background: transparent;
+  color: #0a2a4a;
+  border: 1.5px solid #0a2a4a;
+  padding: 12px 24px; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; font-family: inherit;
+  text-decoration: none;
+  display: inline-flex; align-items: center;
+  transition: all 0.25s;
+}
+.btn--outline-dark:hover {
+  background: #0a2a4a; color: #fff;
+}
+
+.vacancy-panel {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8ecf1;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(10,42,74,0.08);
+}
+.vacancy-panel__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px;
+  background: #0a2a4a;
+  color: #fff;
+}
+.vacancy-panel__title {
+  font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+}
+.vacancy-panel__badge {
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 100px;
+  background: rgba(0,180,216,0.25);
+  color: #6fd4ea;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.vacancy-empty {
+  padding: 40px 32px;
+  text-align: center;
+}
+.vacancy-empty__icon {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: rgba(0,180,216,0.08);
+  color: #00b4d8;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.vacancy-empty__title {
+  font-size: 18px; font-weight: 700; color: #0a2a4a;
+  margin: 0 0 8px;
+}
+.vacancy-empty__text {
+  font-size: 14px; line-height: 1.65; color: #5a6b7e;
+  margin: 0 0 24px;
+}
+
+/* Vacancy list with items */
+.vacancy-list {
+  display: flex; flex-direction: column;
+  padding: 8px;
+}
+.vacancy-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  transition: background 0.22s;
+  border: 1px solid transparent;
+}
+.vacancy-item:hover {
+  background: #f0f9fc;
+  border-color: rgba(0,180,216,0.15);
+}
+.vacancy-item__main {
+  display: flex; flex-direction: column; gap: 4px;
+  flex: 1; min-width: 0;
+}
+.vacancy-item__role {
+  font-size: 15px; font-weight: 700; color: #0a2a4a;
+  margin: 0;
+}
+.vacancy-item__meta {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px; color: #7a8b9e;
+}
+.vacancy-item__dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: #c5cdd9;
+}
+.vacancy-item__btn {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: #f0f9fc;
+  color: #00b4d8;
+  border: 1px solid rgba(0,180,216,0.15);
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(.16,1,.3,1);
+  flex-shrink: 0;
+}
+.vacancy-item__btn:hover {
+  background: #00b4d8;
+  color: #fff;
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(0,180,216,0.3);
+}
+.vacancy-footer {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 16px 22px;
+  background: #f6f8fb;
+  border-top: 1px solid #e8ecf1;
+  text-align: center;
+}
+.vacancy-footer__label {
+  font-size: 10px; font-weight: 700;
+  color: #00b4d8;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.vacancy-footer__text {
+  font-size: 12px; color: #7a8b9e;
+}
+
+.vacancy-contact {
+  padding-top: 22px;
+  border-top: 1px dashed #e8ecf1;
+  display: flex; flex-direction: column; gap: 4px;
+  align-items: center;
+}
+.vacancy-contact__label {
+  font-size: 11px; font-weight: 700; color: #8a9cad;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.vacancy-contact__value {
+  font-size: 13px; font-weight: 600; color: #00b4d8;
+  text-decoration: none;
+}
+.vacancy-contact__value:hover { text-decoration: underline; }
 
 /* ── FLOATING CONTACT BUTTONS ── */
 .floating-contact {
@@ -948,10 +1848,21 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .nav__logo-sub { display: none; }
+  .nav__link { padding: 10px 10px; font-size: 13px; }
+}
+@media (max-width: 1100px) {
+  .nav__logo-sub { display: none; }
+  .nav__link { padding: 10px 10px; font-size: 13px; }
+  .footer__main { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
 @media (max-width: 900px) {
   .nav__links { display: none !important; }
   .nav__cta:not(.mobile-menu .nav__cta) { display: none !important; }
   .nav__hamburger { display: block !important; }
+  .nav__logo-sub { display: block; }
+  .flot-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (max-width: 768px) {
   .two-col { grid-template-columns: 1fr !important; }
@@ -968,6 +1879,23 @@ img { max-width: 100%; height: auto; }
   .floating-contact { right: 16px; bottom: 16px; gap: 12px; }
   .floating-btn { width: 52px; height: 52px; }
   .floating-btn__tooltip { display: none; }
+  .susten-grid { grid-template-columns: 1fr !important; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .bolsa-layout { grid-template-columns: 1fr !important; gap: 40px; }
+  .bolsa-perks { grid-template-columns: 1fr !important; }
+  .nav__logo-sub { display: none; }
+  .nav__inner { height: 64px; }
+  .mobile-menu { top: 64px; }
+  .dept-selector { grid-template-columns: 1fr !important; }
+  .footer__main { grid-template-columns: 1fr !important; gap: 32px; padding-bottom: 32px; }
+  .footer__col--brand { max-width: 100%; }
+  .footer__bar { flex-direction: column; text-align: center; gap: 10px; }
+  .vacancy-item { padding: 12px 14px; }
+  .vacancy-item__role { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .flot-grid { grid-template-columns: 1fr !important; }
+  .clients-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ── SCROLLBAR ── */
