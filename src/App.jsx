@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
    ══════════════════════════════════════ */
 const COUNTERS = {
   yearFounded: 2013,
-  tripsCompleted: 35000,
+  tripsCompleted: 36000,
 };
 
 /* ══════════════════════════════════════
@@ -82,10 +82,32 @@ const I = {
   chip: <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/></svg>,
   whatsapp: <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>,
   atSymbol: <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"/></svg>,
-  facebook: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>,
+  customs: <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2"/><path d="M15 8h2"/><path d="M7 12h10"/></svg>,
+  globe: <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>,
   linkedin: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>,
   instagram: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>,
 };
+
+/* ══════════════════════════
+   PILARES DATA
+   ══════════════════════════ */
+const PILARES = [
+  {
+    title: "Integridad",
+    desc: "Honestidad y ética en cada paso que damos, construyendo relaciones de confianza con nuestros clientes y socios.",
+    icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>,
+  },
+  {
+    title: "Excelencia y Crecimiento",
+    desc: "Mejora continua y desarrollo constante en cada operacion, impulsando la innovacion para superar las expectativas.",
+    icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>,
+  },
+  {
+    title: "Colaboracion y Empatia",
+    desc: "Un equipo unido por el respeto y el bien comun, donde cada persona aporta lo mejor de si misma.",
+    icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
+  },
+];
 
 /* ══════════════════════════
    CERTIFICATIONS DATA
@@ -364,6 +386,23 @@ export default function App() {
             </Reveal>
           </div>
         </div>
+      {/* ── PILARES ── */}
+      <div className="pilares-wrap">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>NUESTROS PILARES</p>
+        </Reveal>
+        <div className="pilares-grid">
+          {PILARES.map((p, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="pilar-card">
+                <div className="pilar-card__icon">{p.icon}</div>
+                <h3 className="pilar-card__title">{p.title}</h3>
+                <p className="pilar-card__text">{p.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
       </section>
 
       {/* ═══ SERVICIOS ═══ */}
@@ -374,12 +413,12 @@ export default function App() {
         </Reveal>
         <div className="serv-grid">
           {[
-            { icon: I.truck, title: "Transporte Local y Foraneo", desc: "Servicio de autotransporte de carga dentro de la ciudad y a nivel nacional con la maxima seguridad." },
-            { icon: I.shield, title: "Seguridad Certificada", desc: "Contamos con certificaciones C-TPAT, OEA y Transporte Limpio que garantizan la proteccion de tu carga." },
-            { icon: I.gps, title: "Rastreo Satelital", desc: "Monitoreo GPS en tiempo real las 24 horas para que siempre sepas donde esta tu mercancia." },
-            { icon: I.box, title: "Logistica Integral", desc: "Gestion completa de la cadena de suministro: almacenamiento, distribucion y entrega en destino." },
-            { icon: I.snow, title: "Transporte a Frontera", desc: "Servicio especializado de cruce fronterizo con EUA, cumpliendo todas las regulaciones binacionales." },
-            { icon: I.user, title: "Atencion Personalizada", desc: "Asignamos un ejecutivo dedicado para cada cliente, asegurando comunicacion directa y soluciones rapidas." },
+            { icon: I.truck, title: "Transporte Terrestre", desc: "Servicio de autotransporte de carga local, foraneo y a frontera: caja seca, refrigerada/congelada, contenedores y porta contenedores." },
+            { icon: I.globe, title: "Importacion y Exportacion", desc: "Gestion completa de comercio internacional: documentacion, aranceles, permisos y cumplimiento normativo para optimizar costos y tiempos." },
+            { icon: I.customs, title: "Agencia Aduanal", desc: "Tramites de aduana y comercio exterior: clasificacion arancelaria, certificacion de origen, inspeccion de mercancias y previos en origen." },
+            { icon: I.gps, title: "Rastreo Satelital 24/7", desc: "Monitoreo GPS en tiempo real las 24 horas. Gestion operativa centralizada para que siempre sepas donde esta tu mercancia." },
+            { icon: I.shield, title: "Seguridad Certificada", desc: "Certificaciones BASC, C-TPAT, OEA y Transporte Limpio que garantizan la proteccion de tu carga en cada eslabón de la cadena." },
+            { icon: I.user, title: "Atencion Personalizada", desc: "Asignamos un ejecutivo dedicado para cada cliente, asegurando comunicacion directa, soluciones a la medida y respuesta inmediata." },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 0.07}>
               <div className="serv-card">
@@ -403,10 +442,10 @@ export default function App() {
         </Reveal>
         <div className="flot-grid">
           {[
-            { label: "Tractocamiones", count: "30+", detail: "Unidades de ultima generacion con motores de alta eficiencia, cabinas con tecnologia avanzada de asistencia al conductor y mantenimiento preventivo riguroso." },
-            { label: "Cajas Secas", count: "40+", detail: "53 pies de capacidad, ideales para carga general paletizada. Equipadas con sellos de seguridad y rastreo GPS permanente." },
-            { label: "Plataformas", count: "15+", detail: "Para carga sobredimensionada, maquinaria pesada y transporte industrial especializado con amarres certificados." },
-            { label: "Cajas Refrigeradas", count: "10+", detail: "Con control de temperatura preciso para cadena de frio, ideal para productos perecederos y farmaceuticos." },
+            { label: "Camionetas (1.5 – 4.5 Ton)", count: "2–6", detail: "Capacidad de 3,000 a 10,000 lbs con espacio para hasta 6 tarimas. Ideales para distribucion local y entregas urbanas de alta frecuencia con maniobrabilidad optima." },
+            { label: "Camiones Medianos (7 – 14 Ton)", count: "6–12", detail: "Desde 14,000 hasta 30,000 lbs con capacidad para 6 a 12 tarimas. Perfectos para carga regional y rutas de mediano alcance con mayor volumen." },
+            { label: "Trailers 53'", count: "24", detail: "Hasta 24 tarimas en caja seca o refrigerada/congelada. Unidades de ultima generacion con rastreo GPS permanente y sellos de seguridad certificados." },
+            { label: "Porta Contenedores", count: "20'/40'", detail: "Equipados para maniobra y traslado de contenedores de importacion y exportacion, con integracion directa a nuestro servicio de agencia aduanal." },
           ].map((f, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <div className="flot-card">
@@ -497,19 +536,29 @@ export default function App() {
           <p className="section__label" style={{ textAlign: "center" }}>CLIENTES</p>
           <h2 className="section__title" style={{ textAlign: "center" }}>Quienes confian en nosotros</h2>
           <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
-            Acompanamos a grandes cadenas comerciales, laboratorios farmaceuticos y empresas manufactureras en su operacion diaria.
+            Acompanamos a grandes empresas farmaceuticas, cadenas de autoservicio, operadores logisticos internacionales y fabricantes en su operacion diaria.
           </p>
         </Reveal>
         <div className="clients-grid">
           {[
-            { name: "WALMART", sector: "Autoservicio" },
             { name: "PISA", sector: "Farmaceutica" },
-            { name: "SORIANA", sector: "Autoservicio" },
-            { name: "BIMBO", sector: "Alimentos" },
-            { name: "CHEDRAUI", sector: "Autoservicio" },
-            { name: "NESTLE", sector: "Alimentos" },
-            { name: "COCA-COLA", sector: "Bebidas" },
-            { name: "LA COMER", sector: "Autoservicio" },
+            { name: "WALMART", sector: "Autoservicio" },
+            { name: "PAK 2GO", sector: "Logistica" },
+            { name: "VALLE REDONDO", sector: "Alimentos" },
+            { name: "BAYWA R.E.", sector: "Energia" },
+            { name: "KRAFT HEINZ", sector: "Alimentos" },
+            { name: "BAMBERGER POLYMERS", sector: "Quimica" },
+            { name: "CBI GROUP", sector: "Logistica" },
+            { name: "KUEHNE+NAGEL", sector: "Logistica" },
+            { name: "POLNAC", sector: "Quimica" },
+            { name: "SERVI-BOLSA", sector: "Retail" },
+            { name: "FRIALSA", sector: "Cadena de Frio" },
+            { name: "CAB LOGISTICS", sector: "Logistica" },
+            { name: "SOLISTICA", sector: "Logistica" },
+            { name: "HALTER LOGISTICS", sector: "Logistica" },
+            { name: "DOZA LOGISTICA", sector: "Logistica" },
+            { name: "LA MODERNA", sector: "Alimentos" },
+            { name: "TUK", sector: "Retail" },
           ].map((c, i) => (
             <Reveal key={i} delay={i * 0.04}>
               <div className="client-logo-card">
@@ -523,9 +572,9 @@ export default function App() {
           ))}
         </div>
         <Reveal>
-          <div className="placeholder-notice">
+          <div className="placeholder-notice" style={{ borderColor: "rgba(0,180,216,0.2)", background: "rgba(0,180,216,0.03)" }}>
             <span className="placeholder-notice__dot" />
-            Los nombres mostrados son de ejemplo. Proximamente apareceran los logos reales de clientes con autorizacion publicada.
+            Proximamente: logos oficiales de cada cliente. Los nombres mostrados cuentan con autorizacion para su publicacion.
           </div>
         </Reveal>
       </section>
@@ -622,17 +671,19 @@ export default function App() {
                 badge: "Ventas",
                 icon: I.phone,
                 rows: [
-                  { label: "Telefono", value: "+52 (33) 1234-5678", link: "tel:+523312345678" },
-                  { label: "Email", value: "ventas@sfrlogistics.com", link: "mailto:ventas@sfrlogistics.com" },
+                  { label: "Gerente Comercial", value: "Bernardo Garza", link: null },
+                  { label: "Telefono", value: "+52 (81) 1910 3303", link: "tel:+528119103303" },
+                  { label: "Email", value: "gerencia.ventas@s-sever.com", link: "mailto:gerencia.ventas@s-sever.com" },
                 ],
               },
               {
                 key: "operaciones",
-                badge: "Operaciones",
-                icon: I.truck,
+                badge: "Direccion General",
+                icon: I.user,
                 rows: [
-                  { label: "Telefono", value: "+52 (33) 8765-4321", link: "tel:+523387654321" },
-                  { label: "Email", value: "ops@sfrlogistics.com", link: "mailto:ops@sfrlogistics.com" },
+                  { label: "Director General", value: "Jose Antonio Garza", link: null },
+                  { label: "Telefono", value: "+52 (33) 1409 9074", link: "tel:+523314099074" },
+                  { label: "Email", value: "josegarza@s-sever.com", link: "mailto:josegarza@s-sever.com" },
                 ],
               },
             ].map((tab) => (
@@ -650,7 +701,11 @@ export default function App() {
                     {tab.rows.map((r) => (
                       <div key={r.label} className="contact-tab__row">
                         <span className="contact-tab__label">{r.label}</span>
-                        <a href={r.link} className="contact-tab__value contact-tab__value--link">{r.value}</a>
+                        {r.link ? (
+                          <a href={r.link} className="contact-tab__value contact-tab__value--link">{r.value}</a>
+                        ) : (
+                          <span className="contact-tab__value">{r.value}</span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -659,7 +714,7 @@ export default function App() {
             ))}
             <div className="contact-map-hint">
               <div className="contact-map-hint__icon">{I.pin}</div>
-              <span className="contact-map-hint__text">Guadalajara, Jalisco, Mexico</span>
+              <span className="contact-map-hint__text">Zapopan y Tlajomulco de Zuñiga, Jalisco, Mexico</span>
             </div>
           </div>
 
@@ -795,9 +850,9 @@ export default function App() {
                 <a href="mailto:gerencia.ventas@s-sever.com" className="footer__link-static">gerencia.ventas@s-sever.com</a>
               </div>
               <div className="footer__contact-group">
-                <span className="footer__contact-label">Recursos Humanos</span>
-                <a href="tel:+523312945392" className="footer__link-static">+52 33 1294 5392</a>
-                <a href="mailto:recursoshumanos@s-sever.com" className="footer__link-static">recursoshumanos@s-sever.com</a>
+                <span className="footer__contact-label">Direccion General</span>
+                <a href="tel:+523314099074" className="footer__link-static">+52 33 1409 9074</a>
+                <a href="mailto:josegarza@s-sever.com" className="footer__link-static">josegarza@s-sever.com</a>
               </div>
             </div>
           </div>
@@ -806,14 +861,15 @@ export default function App() {
             <h4 className="footer__col-title">Ubicacion</h4>
             <div className="footer__list">
               <div className="footer__contact-group">
-                <span className="footer__contact-label">Oficinas</span>
-                <span className="footer__link-static">Guadalajara, Jalisco</span>
-                <span className="footer__link-static">Monterrey, Nuevo Leon</span>
+                <span className="footer__contact-label">Oficinas Administrativas</span>
+                <span className="footer__link-static">Av. Ignacio L Vallarta #6503</span>
+                <span className="footer__link-static">Int. H11, Col. Ciudad Granja</span>
+                <span className="footer__link-static">Zapopan, Jal. C.P. 45010</span>
               </div>
               <div className="footer__contact-group">
-                <span className="footer__contact-label">Horario</span>
-                <span className="footer__link-static">Lun - Vie: 8:00 - 18:00</span>
-                <span className="footer__link-static">Sab: 9:00 - 14:00</span>
+                <span className="footer__contact-label">Patio Operativo</span>
+                <span className="footer__link-static">Dr. Pedro Juan Mirassou y Tarno</span>
+                <span className="footer__link-static">Tlajomulco de Zuñiga, Jal. C.P. 45610</span>
               </div>
             </div>
           </div>
@@ -1541,12 +1597,58 @@ a.footer__link-static:hover { color: #00b4d8; }
   margin: 0;
 }
 
-/* ── CLIENTES ── */
-.clients-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 16px; max-width: 1100px; margin: 0 auto;
+/* ── PILARES ── */
+.pilares-wrap {
+  padding: 48px 24px 0;
+  max-width: 1100px; margin: 0 auto;
 }
-.client-logo-card {
+.pilares-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-top: 24px;
+}
+.pilar-card {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding: 36px 28px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e8ecf1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.3s;
+}
+.pilar-card:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 10px 32px rgba(0,180,216,0.1);
+  transform: translateY(-3px);
+}
+.pilar-card__icon {
+  color: #00b4d8;
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: rgba(0,180,216,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  transition: all 0.3s;
+}
+.pilar-card:hover .pilar-card__icon {
+  background: rgba(0,180,216,0.15);
+  transform: scale(1.08);
+}
+.pilar-card__title {
+  font-size: 18px; font-weight: 700; color: #0a2a4a;
+  margin: 0 0 10px;
+}
+.pilar-card__text {
+  font-size: 14px; color: #5a6b7e; line-height: 1.7; margin: 0;
+}
+
+/* ── CLIENTES (18 items: 6 cols) ── */
+.clients-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 14px; max-width: 1200px; margin: 0 auto;
+}
+
+/* ── SCROLLBAR ── */
   aspect-ratio: 16/9;
   background: #fff;
   border: 1px solid #e8ecf1;
@@ -1880,7 +1982,8 @@ a.footer__link-static:hover { color: #00b4d8; }
   .floating-btn { width: 52px; height: 52px; }
   .floating-btn__tooltip { display: none; }
   .susten-grid { grid-template-columns: 1fr !important; }
-  .clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .clients-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .pilares-grid { grid-template-columns: 1fr !important; }
   .bolsa-layout { grid-template-columns: 1fr !important; gap: 40px; }
   .bolsa-perks { grid-template-columns: 1fr !important; }
   .nav__logo-sub { display: none; }
@@ -1895,7 +1998,8 @@ a.footer__link-static:hover { color: #00b4d8; }
 }
 @media (max-width: 480px) {
   .flot-grid { grid-template-columns: 1fr !important; }
-  .clients-grid { grid-template-columns: 1fr !important; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .pilares-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ── SCROLLBAR ── */
