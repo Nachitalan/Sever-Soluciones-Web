@@ -174,10 +174,10 @@ export default function App() {
       label: "Servicios",
       target: "servicios",
       items: [
-        { label: "Transporte Local", target: "servicios" },
-        { label: "Transporte Foraneo", target: "servicios" },
-        { label: "Transporte a Frontera", target: "servicios" },
-        { label: "Refrigerado / Congelado", target: "servicios" },
+        { label: "Transporte Terrestre", target: "servicios" },
+        { label: "Importacion y Exportacion", target: "servicios" },
+        { label: "Agencia Aduanal", target: "agencia-aduanal" },
+        { label: "Capacidades", target: "capacidades" },
         { label: "Nuestra Flotilla", target: "flotilla" },
       ],
     },
@@ -410,21 +410,133 @@ export default function App() {
         <Reveal>
           <p className="section__label" style={{ textAlign: "center" }}>NUESTROS SERVICIOS</p>
           <h2 className="section__title" style={{ textAlign: "center" }}>Soluciones de Transporte</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px" }}>
+            Ofrecemos soluciones logisticas integrales que cubren toda la cadena de suministro,
+            desde el transporte terrestre hasta la gestion aduanal y el comercio exterior.
+          </p>
         </Reveal>
-        <div className="serv-grid">
+        <div className="serv-grid serv-grid--three">
           {[
-            { icon: I.truck, title: "Transporte Terrestre", desc: "Servicio de autotransporte de carga local, foraneo y a frontera: caja seca, refrigerada/congelada, contenedores y porta contenedores." },
-            { icon: I.globe, title: "Importacion y Exportacion", desc: "Gestion completa de comercio internacional: documentacion, aranceles, permisos y cumplimiento normativo para optimizar costos y tiempos." },
-            { icon: I.customs, title: "Agencia Aduanal", desc: "Tramites de aduana y comercio exterior: clasificacion arancelaria, certificacion de origen, inspeccion de mercancias y previos en origen." },
-            { icon: I.gps, title: "Rastreo Satelital 24/7", desc: "Monitoreo GPS en tiempo real las 24 horas. Gestion operativa centralizada para que siempre sepas donde esta tu mercancia." },
-            { icon: I.shield, title: "Seguridad Certificada", desc: "Certificaciones BASC, C-TPAT, OEA y Transporte Limpio que garantizan la proteccion de tu carga en cada eslabón de la cadena." },
-            { icon: I.user, title: "Atencion Personalizada", desc: "Asignamos un ejecutivo dedicado para cada cliente, asegurando comunicacion directa, soluciones a la medida y respuesta inmediata." },
+            {
+              icon: I.truck,
+              title: "Transporte Terrestre",
+              desc: "Servicio de autotransporte de carga en caja seca, refrigerada y congelada, contenedores y porta contenedores. Cobertura local, foranea y transfronteriza con EUA.",
+              tags: ["Caja Seca", "Refrigerada / Congelada", "Contenedores", "Porta Contenedores"],
+            },
+            {
+              icon: I.globe,
+              title: "Importacion y Exportacion",
+              desc: "Gestion completa de comercio internacional: documentacion, aranceles e impuestos, asegurando el cumplimiento de regulaciones y optimizando costos y tiempos de envio.",
+              tags: ["Documentacion", "Aranceles e Impuestos", "Cumplimiento Normativo"],
+            },
+            {
+              icon: I.customs,
+              title: "Agencia Aduanal",
+              desc: "Tramites aduanales, clasificacion arancelaria y permisos de comercio exterior. Gestion integral con inspectores acreditados para garantizar la conformidad de tu mercancia.",
+              tags: ["Clasificacion Arancelaria", "Permisos", "Previos en Origen"],
+            },
           ].map((s, i) => (
-            <Reveal key={i} delay={i * 0.07}>
-              <div className="serv-card">
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="serv-card serv-card--large">
                 <div className="serv-card__icon">{s.icon}</div>
                 <h3 className="serv-card__title">{s.title}</h3>
                 <p className="serv-card__text">{s.desc}</p>
+                <div className="serv-card__tags">
+                  {s.tags.map((t) => <span key={t} className="serv-tag">{t}</span>)}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ AGENCIA ADUANAL DETAIL ═══ */}
+      <section id="agencia-aduanal" className="section section--light">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center" }}>AGENCIA ADUANAL</p>
+          <h2 className="section__title" style={{ textAlign: "center" }}>Gestion Aduanal Integral</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 660, margin: "0 auto 48px" }}>
+            Contamos con un equipo especializado que gestiona todos los procesos aduanales,
+            garantizando el cumplimiento normativo y optimizando tiempos de liberacion de mercancia.
+          </p>
+        </Reveal>
+        <div className="aduanal-grid">
+          {[
+            {
+              num: "01",
+              title: "Importacion y Exportacion",
+              desc: "Gestionamos todos los procesos de importacion y exportacion, incluyendo documentacion, aranceles e impuestos, asegurando el cumplimiento de regulaciones y optimizando costos y tiempos de envio.",
+              icon: I.globe,
+            },
+            {
+              num: "02",
+              title: "Tramites de Aduana y Comercio Exterior",
+              desc: "Gestionamos de forma integral los tramites de aduana y comercio exterior, incluyendo clasificacion arancelaria, permisos, certificacion de origen, inspeccion de mercancias y el calculo y pago de impuestos y derechos aduaneros.",
+              icon: I.customs,
+            },
+            {
+              num: "03",
+              title: "Previos en Origen",
+              desc: "Realizamos previos de origen mediante inspecciones antes del embarque para asegurar el cumplimiento normativo, evitando retenciones, multas y retrasos. Contamos con inspectores acreditados que garantizan la integridad y conformidad de la mercancia antes de su envio.",
+              icon: I.shield,
+            },
+          ].map((item, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="aduanal-card">
+                <div className="aduanal-card__top">
+                  <div className="aduanal-card__icon-wrap">{item.icon}</div>
+                  <span className="aduanal-card__num">{item.num}</span>
+                </div>
+                <h3 className="aduanal-card__title">{item.title}</h3>
+                <p className="aduanal-card__text">{item.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ CAPACIDADES ═══ */}
+      <section id="capacidades" className="section section--dark">
+        <Reveal>
+          <p className="section__label" style={{ textAlign: "center", color: "#00b4d8" }}>CAPACIDADES</p>
+          <h2 className="section__title" style={{ textAlign: "center", color: "#fff" }}>Operacion y Control</h2>
+          <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 48px", color: "rgba(255,255,255,0.6)" }}>
+            Infraestructura y procesos diseñados para garantizar la eficiencia, seguridad y trazabilidad en cada operacion.
+          </p>
+        </Reveal>
+        <div className="cap-grid">
+          {[
+            {
+              icon: I.gps,
+              title: "Operacion y Control",
+              desc: "Monitoreo 24/7 y gestion operativa centralizada con tecnologia de rastreo satelital en tiempo real.",
+            },
+            {
+              icon: I.truck,
+              title: "Infraestructura Flexible",
+              desc: "Flota dedicada y soluciones adaptadas a cada tipo de carga, desde entregas locales hasta transporte transfronterizo.",
+            },
+            {
+              icon: I.box,
+              title: "Cobertura y Logistica",
+              desc: "Operacion nacional y transfronteriza con entregas multipunto, cubriendo toda la red de distribucion del cliente.",
+            },
+            {
+              icon: I.globe,
+              title: "Comercio Exterior",
+              desc: "Gestion integral aduanal y liberacion de mercancia con cumplimiento normativo en importacion y exportacion.",
+            },
+            {
+              icon: I.shield,
+              title: "Seguridad Certificada",
+              desc: "Cumplimiento con estandares internacionales: BASC, C-TPAT, OEA y Transporte Limpio en cada operacion.",
+            },
+          ].map((c, i) => (
+            <Reveal key={i} delay={i * 0.08}>
+              <div className="cap-card">
+                <div className="cap-card__icon">{c.icon}</div>
+                <h3 className="cap-card__title">{c.title}</h3>
+                <p className="cap-card__text">{c.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -1202,15 +1314,123 @@ img { max-width: 100%; height: auto; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
   max-width: 1100px; margin: 40px auto 0;
 }
+.serv-grid--three { grid-template-columns: repeat(3, 1fr); }
 .serv-card {
   padding: 32px 28px; border-radius: 14px;
   background: #f8fafb; border: 1px solid #e8ecf1;
   transition: all 0.3s; cursor: default;
+  display: flex; flex-direction: column; gap: 0;
+}
+.serv-card--large {
+  padding: 36px 30px;
 }
 .serv-card:hover { background: #fff; border-color: #00b4d8; box-shadow: 0 8px 28px rgba(0,180,216,0.08); transform: translateY(-3px); }
 .serv-card__icon { color: #00b4d8; margin-bottom: 16px; }
 .serv-card__title { font-size: 17px; font-weight: 700; color: #0a2a4a; margin-bottom: 10px; }
-.serv-card__text { font-size: 14px; color: #5a6b7e; line-height: 1.7; margin: 0; }
+.serv-card--large .serv-card__title { font-size: 20px; margin-bottom: 14px; }
+.serv-card__text { font-size: 14px; color: #5a6b7e; line-height: 1.7; margin: 0; flex: 1; }
+.serv-card--large .serv-card__text { font-size: 15px; }
+.serv-card__tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 20px;
+}
+.serv-tag {
+  font-size: 11px; font-weight: 600;
+  padding: 5px 12px; border-radius: 100px;
+  background: rgba(0,180,216,0.08);
+  color: #00b4d8;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(0,180,216,0.15);
+  transition: all 0.2s;
+}
+.serv-card:hover .serv-tag {
+  background: rgba(0,180,216,0.12);
+  border-color: rgba(0,180,216,0.3);
+}
+
+/* ── AGENCIA ADUANAL ── */
+.aduanal-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 1100px; margin: 0 auto;
+}
+.aduanal-card {
+  padding: 36px 28px 32px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8ecf1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.3s;
+  display: flex; flex-direction: column; gap: 0;
+}
+.aduanal-card:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 12px 36px rgba(0,180,216,0.1);
+  transform: translateY(-3px);
+}
+.aduanal-card__top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.aduanal-card__icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(0,180,216,0.08);
+  color: #00b4d8;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.aduanal-card:hover .aduanal-card__icon-wrap {
+  background: rgba(0,180,216,0.15);
+}
+.aduanal-card__num {
+  font-size: 48px; font-weight: 800;
+  color: rgba(0,180,216,0.12);
+  line-height: 1;
+  font-family: 'Playfair Display', Georgia, serif;
+  transition: color 0.3s;
+}
+.aduanal-card:hover .aduanal-card__num { color: rgba(0,180,216,0.2); }
+.aduanal-card__title {
+  font-size: 18px; font-weight: 700; color: #0a2a4a;
+  margin: 0 0 12px; line-height: 1.25;
+}
+.aduanal-card__text {
+  font-size: 14px; color: #5a6b7e; line-height: 1.72; margin: 0;
+}
+
+/* ── CAPACIDADES ── */
+.cap-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
+  max-width: 1200px; margin: 0 auto;
+}
+.cap-card {
+  padding: 32px 22px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+}
+.cap-card:hover {
+  background: rgba(0,180,216,0.08);
+  border-color: rgba(0,180,216,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.cap-card__icon {
+  color: #00b4d8;
+  margin-bottom: 16px;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.cap-card:hover .cap-card__icon { opacity: 1; }
+.cap-card__title {
+  font-size: 15px; font-weight: 700; color: #fff;
+  margin: 0 0 10px; line-height: 1.3;
+}
+.cap-card__text {
+  font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; margin: 0;
+}
 
 /* ── FLOTILLA ── */
 .flot-grid {
@@ -1969,6 +2189,9 @@ a.footer__link-static:hover { color: #00b4d8; }
 @media (max-width: 768px) {
   .two-col { grid-template-columns: 1fr !important; }
   .serv-grid { grid-template-columns: 1fr !important; }
+  .serv-grid--three { grid-template-columns: 1fr !important; }
+  .aduanal-grid { grid-template-columns: 1fr !important; }
+  .cap-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .flot-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .sector-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .contact-layout { grid-template-columns: 1fr !important; }
@@ -2000,6 +2223,7 @@ a.footer__link-static:hover { color: #00b4d8; }
   .flot-grid { grid-template-columns: 1fr !important; }
   .clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .pilares-grid { grid-template-columns: 1fr !important; }
+  .cap-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ── SCROLLBAR ── */
