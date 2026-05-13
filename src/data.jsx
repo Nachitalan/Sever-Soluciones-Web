@@ -117,10 +117,22 @@ export const CAPACIDADES = [
    FLOTILLA (slide 7 del PDF)
    ══════════════════════════ */
 export const FLOTILLA = [
-  { label: "Camionetas (1.5 – 4.5 Ton)",   detail: "Capacidad de 3,000 a 10,000 lbs con espacio para hasta 6 tarimas. Ideales para distribución local y entregas urbanas de alta frecuencia." },
-  { label: "Camiones Medianos (7 – 14 Ton)", detail: "Desde 14,000 hasta 30,000 lbs con capacidad para 6 a 12 tarimas. Perfectos para carga regional y rutas de mediano alcance." },
-  { label: "Tráilers 53'",                 detail: "Hasta 24 tarimas en caja seca o refrigerada/congelada. Unidades con rastreo GPS permanente y sellos de seguridad certificados." },
-  { label: "Porta Contenedores",           detail: "Equipados para maniobra y traslado de contenedores de importación y exportación, con integración directa a nuestro servicio de agencia aduanal." },
+  { 
+    label: "Camionetas (1.5 TON)", 
+    detail: "Toyota y Nissan refrigeradas. Capacidad de 3,000 lbs con espacio para 2-6 tarimas. Ideales para distribución local y entregas urbanas de alta frecuencia." 
+  },
+  { 
+    label: "Rabones (3 - 10 TON)", 
+    detail: "Hino e International con cabina separada. Mini Rabones de 3-6.5 TON y Rabones de 10 TON con capacidad de 6-12 tarimas. Perfectos para carga regional y transporte dedicado." 
+  },
+  { 
+    label: "Tortones (15 TON)", 
+    detail: "International refrigerados especializados. Ideales para transporte transfronterizo, entregas dedicadas de larga distancia y servicios a clientes mayoristas." 
+  },
+  { 
+    label: "Tractocamiones & Trailers (26 TON)", 
+    detail: "International, Kenworth, Freightliner y Scania. Hasta 24 tarimas en caja seca o refrigerada. Rastreo GPS y sellos de seguridad para transporte de larga distancia e importación/exportación." 
+  },
 ];
 
 /* ══════════════════════════
