@@ -60,7 +60,7 @@ export const CERTIFICATIONS = [
   { name: "C-TPAT",            img: "/ctpat-logo-arriba.png" },
   { name: "Transporte Limpio", img: "/certificacion-transportelimpio.png" },
   { name: "OEA",               img: "/Sello-OEA.png", enProceso: true },
-  { name: "BASC",              img: "/BASC.png", cert: "CERTIFIED MEXGDL00215-1-2" },
+  { name: "BASC",              img: "/logobasc300-1.png", cert: "CERTIFIED MEXGDL00215-1-2" },
 ];
 
 /* ══════════════════════════

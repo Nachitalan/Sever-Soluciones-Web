@@ -2,12 +2,29 @@ import { Reveal } from "../components/Reveal.jsx";
 
 /* ══════════════════════════════════════
    CLIENTES
-   Espacios vacíos para colocar logos de clientes.
-   Para añadir un logo real, reemplaza el placeholder
-   con: <img src="/logos/cliente.png" alt="..." />
    ══════════════════════════════════════ */
 
-const CLIENT_SLOTS = 18; // cambia este número si quieres más/menos espacios
+// Todas las imágenes en la carpeta 'public' se referencian desde la raíz '/'
+const clientLogos = [
+  { src: "/Bamberger-logo.png", alt: "Bamberger Polymers" },
+  { src: "/baywa.png", alt: "BayWa r.e." },
+  { src: "/cablogistic.png", alt: "Cab Logistics" },
+  { src: "/CBI-LOGO-1-.png", alt: "CBI Group" },
+  { src: "/cropped-Logo-PiSA-01-1109x800.png", alt: "PiSA Farmacéutica" },
+  { src: "/doza.png", alt: "Doza Logística" },
+  { src: "/Frialsa.png", alt: "Frialsa" },
+  { src: "/halter.png", alt: "Halter Logistics" },
+  { src: "/KraftHeinz.svg", alt: "Kraft Heinz" },
+  { src: "/kuehe.png", alt: "Kuehne+Nagel" },
+  { src: "/la moderna.png", alt: "La Moderna" }, 
+  { src: "/logo-blue-61853534954350a24856405226b1fc25e3fb8920d692ef.png", alt: "2GO Logistics" },
+  { src: "/logo-e1649172202358.png", alt: "Valle Redondo" },
+  { src: "/polnac.png", alt: "Polnac" },
+  { src: "/servibolsa.png", alt: "Servibolsa" },
+  { src: "/solistica.png", alt: "Solistica" },
+  { src: "/tuk_logo_nuevo.png", alt: "Tuk Cintas Adhesivas" }, // <-- Así funciona perfectamente en Netlify
+  { src: "/Walmart-Logo.png", alt: "Walmart" }
+];
 
 export function Clientes() {
   return (
@@ -19,16 +36,21 @@ export function Clientes() {
           Acompañamos a grandes empresas farmacéuticas, cadenas de autoservicio, operadores logísticos internacionales y fabricantes en su operación diaria.
         </p>
       </Reveal>
+      
       <div className="clients-grid">
-        {Array.from({ length: CLIENT_SLOTS }).map((_, i) => (
+        {clientLogos.map((logo, i) => (
           <Reveal key={i} delay={i * 0.03}>
             <div className="client-logo-card">
-              <div className="client-logo-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.25">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <path d="M3 9h18"/>
-                  <path d="M9 21V9"/>
-                </svg>
+              <div className="client-logo-placeholder" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "16px", height: "100%" }}>
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  style={{ 
+                    maxWidth: "100%", 
+                    maxHeight: "100%", 
+                    objectFit: "contain"
+                  }} 
+                />
               </div>
             </div>
           </Reveal>
