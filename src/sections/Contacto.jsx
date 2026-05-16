@@ -14,7 +14,6 @@ const TABS = [
     badge: "Ventas",
     iconKey: "phone",
     rows: [
-      { label: "Gerente Comercial", value: "Bernardo Garza",            link: null },
       { label: "Teléfono",          value: "+52 (81) 1910 3303",        link: "tel:+528119103303" },
       { label: "Email",             value: "gerencia.ventas@s-sever.com", link: "mailto:gerencia.ventas@s-sever.com" },
     ],
