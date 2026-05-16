@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { I } from "../icons.jsx";
 import { NAV_STRUCTURE, FLOATING_CONTACT } from "../data.jsx";
+import { AvisoPrivacidad } from "./AvisoPrivacidad.jsx"; // Importamos el nuevo componente
 
 export function Footer({ onNavigate }) {
+  // Estado para controlar la visibilidad del Aviso de Privacidad
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
   return (
     <footer className="footer">
       <div className="footer__main">
@@ -22,7 +27,7 @@ export function Footer({ onNavigate }) {
             Servicio especializado de autotransporte local, foráneo y a frontera con EUA. En ruta desde 2013.
           </p>
           <div className="footer__social">
-            <a href="https://www.linkedin.com"  target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="LinkedIn">{I.linkedin}</a>
+            <a href="https://www.linkedin.com/company/soluciones-sever/about/"  target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="LinkedIn">{I.linkedin}</a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="Instagram">{I.instagram}</a>
             <a href={`https://wa.me/${FLOATING_CONTACT.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="footer__social-btn" aria-label="WhatsApp">{I.whatsapp}</a>
           </div>
@@ -76,11 +81,21 @@ export function Footer({ onNavigate }) {
       <div className="footer__bar">
         <span>© {new Date().getFullYear()} Soluciones Sever. Todos los derechos reservados.</span>
         <span className="footer__bar-links">
-          <a href="#" className="footer__bar-link">Aviso de Privacidad</a>
+          {/* Botón modificado para abrir el Modal sin afectar tus estilos */}
+          <button 
+            onClick={() => setShowPrivacy(true)} 
+            className="footer__bar-link"
+            style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer' }}
+          >
+            Aviso de Privacidad
+          </button>
           <span className="footer__bar-sep">·</span>
           <a href="#" className="footer__bar-link">Términos y Condiciones</a>
         </span>
       </div>
+
+      {/* Renderizamos el componente del Aviso de Privacidad cuando showPrivacy es true */}
+      {showPrivacy && <AvisoPrivacidad onClose={() => setShowPrivacy(false)} />}
     </footer>
   );
 }
