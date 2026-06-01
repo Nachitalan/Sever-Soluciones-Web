@@ -117,21 +117,33 @@ export const CAPACIDADES = [
    FLOTILLA (slide 7 del PDF)
    ══════════════════════════ */
 export const FLOTILLA = [
-  { 
-    label: "Camionetas (1.5 TON)", 
-    detail: "Toyota y Nissan refrigeradas. Capacidad de 3,000 lbs con espacio para 2-6 tarimas. Ideales para distribución local y entregas urbanas de alta frecuencia." 
+  {
+    img: "/1.5ton.jpg",
+    label: "Camioneta 1.5 TON",
+    capacidad: "3,000 lbs",
+    tarimas: "2 – 6 tarimas",
+    idealPara: "Distribución local y entregas urbanas de alta frecuencia.",
   },
-  { 
-    label: "Rabones (3 - 10 TON)", 
-    detail: "Hino e International con cabina separada. Mini Rabones de 3-6.5 TON y Rabones de 10 TON con capacidad de 6-12 tarimas. Perfectos para carga regional y transporte dedicado." 
+  {
+    img: "/RABON.jpg",
+    label: "Rabón 3 – 10 TON",
+    capacidad: "6,000 – 20,000 lbs",
+    tarimas: "6 – 12 tarimas",
+    idealPara: "Carga regional, rutas de mediana distancia y entregas dedicadas.",
   },
-  { 
-    label: "Tortones (15 TON)", 
-    detail: "International refrigerados especializados. Ideales para transporte transfronterizo, entregas dedicadas de larga distancia y servicios a clientes mayoristas." 
+  {
+    img: "/torton.jpg",
+    label: "Tortón 14 TON",
+    capacidad: "30,000 lbs",
+    tarimas: "12 tarimas",
+    idealPara: "Distribución mayorista y entregas de larga distancia.",
   },
-  { 
-    label: "Tractocamiones & Trailers (26 TON)", 
-    detail: "International, Kenworth, Freightliner y Scania. Hasta 24 tarimas en caja seca o refrigerada. Rastreo GPS y sellos de seguridad para transporte de larga distancia e importación/exportación." 
+  {
+    img: "/tracto.jpg",
+    label: "Tractocamión 26 TON",
+    capacidad: "52,000 lbs",
+    tarimas: "Hasta 24 tarimas",
+    idealPara: "Transporte de larga distancia, carga masiva e importación/exportación.",
   },
 ];
 

@@ -11,10 +11,11 @@ export function CertificationsBar() {
               <div className="cert-badge__img-wrap">
                 <img src={c.img} alt={c.name} className="cert-badge__img" />
               </div>
-              <div className="cert-badge__info">
-                <span className="cert-badge__name">{c.name}</span>
-                {c.cert      && <span className="cert-badge__cert">{c.cert}</span>}
-                {c.enProceso && <span className="cert-badge__proceso">En proceso</span>}
+              {/* Tooltip: visible solo al hover */}
+              <div className="cert-badge__tooltip">
+                <span className="cert-badge__tooltip-name">{c.name}</span>
+                {c.cert      && <span className="cert-badge__tooltip-cert">{c.cert}</span>}
+                {c.enProceso && <span className="cert-badge__tooltip-proc">En proceso</span>}
               </div>
             </div>
           </Reveal>

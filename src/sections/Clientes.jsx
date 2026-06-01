@@ -11,7 +11,7 @@ const clientLogos = [
   { src: "/cablogistic.png", alt: "Cab Logistics" },
   { src: "/CBI-LOGO-1-.png", alt: "CBI Group" },
   { src: "/cropped-Logo-PiSA-01-1109x800.png", alt: "PiSA Farmacéutica" },
-  { src: "/doz.png", alt: "Doza Logística" },
+  { src: "/doz.png", alt: "Doza Logística", big: true },
   { src: "/Frialsa.png", alt: "Frialsa" },
   { src: "/halter.png", alt: "Halter Logistics" },
   { src: "/KraftHeinz.svg.png", alt: "Kraft Heinz" },
@@ -42,14 +42,15 @@ export function Clientes() {
           <Reveal key={i} delay={i * 0.03}>
             <div className="client-logo-card">
               <div className="client-logo-placeholder" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "16px", height: "100%" }}>
-                <img 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  style={{ 
-                    maxWidth: "100%", 
-                    maxHeight: "100%", 
-                    objectFit: "contain"
-                  }} 
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain",
+                    ...(logo.big && { transform: "scale(2.2)", transformOrigin: "center" })
+                  }}
                 />
               </div>
             </div>
