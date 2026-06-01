@@ -42,7 +42,7 @@ export default function App() {
 
       <Hero               onNavigate={go} adminYear={admin.adminYear} adminTrips={admin.adminTrips} />
       <CertificationsBar />
-      <Nosotros           adminYear={admin.adminYear} adminTrips={admin.adminTrips} />
+      <Nosotros />
       <Servicios />
       <AgenciaAduanal />
       <Capacidades />

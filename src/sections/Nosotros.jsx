@@ -1,19 +1,13 @@
 import { Reveal } from "../components/Reveal.jsx";
-import { useInView, useCountUp } from "../hooks.js";
 import { PILARES } from "../data.jsx";
 
 /* ══════════════════════════════════════
    NOSOTROS
-   Misión, Visión, contadores animados y pilares.
-   Props:
-     - adminYear:  número (año fundación, viene del admin)
-     - adminTrips: número (viajes completados, viene del admin)
+   Misión, Visión y pilares.
+   (Los contadores están en el Hero)
    ══════════════════════════════════════ */
 
-export function Nosotros({ adminYear, adminTrips }) {
-  const [cRef, cVis] = useInView();
-  const tripCount = useCountUp(adminTrips, 2200, cVis);
-
+export function Nosotros() {
   return (
     <section id="nosotros" className="section section--light">
       <div className="section__inner two-col">
@@ -26,16 +20,6 @@ export function Nosotros({ adminYear, adminTrips }) {
               Servicio Especializado de Autotransporte local, foráneo y a frontera con EUA, satisfaciendo
               las necesidades del transporte y logística en la distribución de mercancía.
             </p>
-            <div ref={cRef} className="counter-row">
-              <div className="counter-item">
-                <span className="counter-item__number">{new Date().getFullYear() - adminYear}+</span>
-                <span className="counter-item__label">Años de experiencia</span>
-              </div>
-              <div className="counter-item">
-                <span className="counter-item__number">{tripCount.toLocaleString()}+</span>
-                <span className="counter-item__label">Viajes completados</span>
-              </div>
-            </div>
           </div>
         </Reveal>
 

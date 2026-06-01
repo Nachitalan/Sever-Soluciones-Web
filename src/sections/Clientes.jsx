@@ -49,7 +49,7 @@ export function Clientes() {
                     maxWidth: "100%",
                     maxHeight: "100%",
                     objectFit: "contain",
-                    ...(logo.big && { transform: "scale(2.2)", transformOrigin: "center" })
+                    ...(logo.big && { transform: "scale(1.5)", transformOrigin: "center" })
                   }}
                 />
               </div>
