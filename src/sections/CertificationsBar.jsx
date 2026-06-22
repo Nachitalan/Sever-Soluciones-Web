@@ -14,6 +14,7 @@ export function CertificationsBar() {
               {/* Tooltip: visible solo al hover */}
               <div className="cert-badge__tooltip">
                 <span className="cert-badge__tooltip-name">{c.name}</span>
+                {c.desc      && <span className="cert-badge__tooltip-desc">{c.desc}</span>}
                 {c.cert      && <span className="cert-badge__tooltip-cert">{c.cert}</span>}
                 {c.enProceso && <span className="cert-badge__tooltip-proc">En proceso</span>}
               </div>

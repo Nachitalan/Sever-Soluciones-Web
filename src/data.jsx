@@ -44,6 +44,7 @@ export const NAV_STRUCTURE = [
       { label: "Agencia Aduanal",            target: "agencia-aduanal" },
       { label: "Capacidades",                target: "capacidades" },
       { label: "Nuestra Flotilla",           target: "flotilla" },
+      { label: "Cajas y Contenedores",       target: "cajas-contenedores" },
     ],
   },
   { type: "link", label: "Sectores",         target: "sectores" },
@@ -57,10 +58,14 @@ export const NAV_STRUCTURE = [
    CERTIFICATIONS
    ══════════════════════════ */
 export const CERTIFICATIONS = [
-  { name: "C-TPAT",            img: "/ctpat-logo-arriba.png" },
-  { name: "Transporte Limpio", img: "/certificacion-transportelimpio.png" },
-  { name: "OEA",               img: "/Sello-OEA.png", enProceso: true },
-  { name: "BASC",              img: "/logobasc300-1.png", cert: "CERTIFIED MEXGDL00215-1-2" },
+  { name: "C-TPAT",            img: "/ctpat-logo-arriba.png",
+    desc: "Programa de cooperación entre el gobierno de EE. UU. y la industria privada que certifica buenas prácticas de seguridad en la cadena de suministro del comercio internacional." },
+  { name: "Transporte Limpio", img: "/certificacion-transportelimpio.png",
+    desc: "Distintivo otorgado por la SEMARNAT a empresas de autotransporte comprometidas con la reducción de emisiones contaminantes y el uso eficiente de combustible." },
+  { name: "OEA",               img: "/Sello-OEA.png", enProceso: true,
+    desc: "Operador Económico Autorizado: reconocimiento aduanero internacional a empresas con altos estándares de seguridad y cumplimiento en su cadena logística." },
+  { name: "BASC",              img: "/logobasc300-1.png", cert: "CERTIFIED MEXGDL00215-1-2",
+    desc: "Alianza Empresarial para un Comercio Seguro: certifica el cumplimiento de estándares internacionales de seguridad en la cadena de suministro." },
 ];
 
 /* ══════════════════════════
@@ -120,30 +125,53 @@ export const FLOTILLA = [
   {
     img: "/1.5ton.jpg",
     label: "Camioneta 1.5 TON",
-    capacidad: "3,000 lbs",
+    capacidad: "1.5 toneladas",
     tarimas: "2 – 6 tarimas",
     idealPara: "Distribución local y entregas urbanas de alta frecuencia.",
   },
   {
+    img: null,
+    label: "Mini Rabón",
+    capacidad: "Texto de prueba",
+    tarimas: "Texto de prueba",
+    idealPara: "Texto de prueba, próximamente se actualizará esta información.",
+  },
+  {
     img: "/RABON.jpg",
     label: "Rabón 3 – 10 TON",
-    capacidad: "6,000 – 20,000 lbs",
+    capacidad: "3 – 10 toneladas",
     tarimas: "6 – 12 tarimas",
     idealPara: "Carga regional, rutas de mediana distancia y entregas dedicadas.",
   },
   {
     img: "/torton.jpg",
     label: "Tortón 14 TON",
-    capacidad: "30,000 lbs",
+    capacidad: "14 toneladas",
     tarimas: "12 tarimas",
     idealPara: "Distribución mayorista y entregas de larga distancia.",
   },
   {
     img: "/tracto.jpg",
     label: "Tractocamión 26 TON",
-    capacidad: "52,000 lbs",
+    capacidad: "26 toneladas",
     tarimas: "Hasta 24 tarimas",
     idealPara: "Transporte de larga distancia, carga masiva e importación/exportación.",
+  },
+];
+
+/* ══════════════════════════
+   CAJAS Y CONTENEDORES
+   ══════════════════════════ */
+export const CAJAS_CONTENEDORES = [
+  {
+    img: null,
+    label: "Caja Refrigerada",
+    desc: "Texto de ejemplo: unidad equipada con sistema de refrigeración que mantiene la temperatura controlada durante todo el trayecto, ideal para mercancía perecedera.",
+  },
+  {
+    img: null,
+    label: "Caja Seca",
+    desc: "Texto de ejemplo: unidad sin control de temperatura, pensada para carga general, maximizando el espacio disponible para optimizar cada envío.",
   },
 ];
 

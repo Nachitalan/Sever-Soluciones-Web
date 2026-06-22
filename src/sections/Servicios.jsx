@@ -8,7 +8,7 @@ export function Servicios() {
         <p className="section__label" style={{ textAlign: "center" }}>NUESTROS SERVICIOS</p>
         <h2 className="section__title" style={{ textAlign: "center" }}>Soluciones de Transporte</h2>
       </Reveal>
-      <div className="serv-grid serv-grid--three">
+      <div className="serv-grid">
         {SERVICIOS.map((s, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="serv-card">

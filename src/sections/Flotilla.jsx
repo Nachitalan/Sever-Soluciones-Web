@@ -1,5 +1,6 @@
 import { Reveal } from "../components/Reveal.jsx";
 import { FLOTILLA } from "../data.jsx";
+import { I } from "../icons.jsx";
 
 export function Flotilla() {
   return (
@@ -16,7 +17,14 @@ export function Flotilla() {
           <Reveal key={i} delay={i * 0.08}>
             <div className="flot-card">
               <div className="flot-card__image">
-                <img src={f.img} alt={f.label} className="flot-card__img" />
+                {f.img ? (
+                  <img src={f.img} alt={f.label} className="flot-card__img" />
+                ) : (
+                  <div className="flot-card__image--placeholder">
+                    {I.truck}
+                    <span>Imagen próximamente</span>
+                  </div>
+                )}
               </div>
               <div className="flot-card__body">
                 <span className="flot-card__label">{f.label}</span>

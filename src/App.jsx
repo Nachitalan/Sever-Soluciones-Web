@@ -13,6 +13,7 @@ import { Servicios }         from "./sections/Servicios.jsx";
 import { AgenciaAduanal }    from "./sections/AgenciaAduanal.jsx";
 import { Capacidades }       from "./sections/Capacidades.jsx";
 import { Flotilla }          from "./sections/Flotilla.jsx";
+import { CajasContenedores } from "./sections/CajasContenedores.jsx";
 import { Sectores }          from "./sections/Sectores.jsx";
 import { Sostenibilidad }    from "./sections/Sostenibilidad.jsx";
 import { Clientes }          from "./sections/Clientes.jsx";
@@ -47,6 +48,7 @@ export default function App() {
       <AgenciaAduanal />
       <Capacidades />
       <Flotilla />
+      <CajasContenedores />
       <Sectores />
       <Sostenibilidad />
       <Clientes />

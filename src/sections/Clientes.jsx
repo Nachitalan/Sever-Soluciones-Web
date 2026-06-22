@@ -57,6 +57,10 @@ export function Clientes() {
           </Reveal>
         ))}
       </div>
+
+      <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "24px auto 0", fontSize: 13, color: "#9fb0c2" }}>
+        Entre otros.
+      </p>
     </section>
   );
 }
