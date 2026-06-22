@@ -279,13 +279,13 @@ img { max-width: 100%; height: auto; }
 /* ── CERTIFICATIONS BAR ── */
 .cert-bar {
   background: #fff;
-  padding: 48px 24px;
+  padding: 56px 24px;
   border-bottom: 1px solid #e8ecf1;
 }
 .cert-bar__inner {
   max-width: 1100px; margin: 0 auto;
   display: flex; align-items: center; justify-content: center;
-  gap: 24px; flex-wrap: wrap;
+  gap: 36px; flex-wrap: wrap;
 }
 .cert-badge {
   position: relative;
@@ -298,11 +298,11 @@ img { max-width: 100%; height: auto; }
   transform: translateY(-2px);
 }
 .cert-badge__img-wrap {
-  width: 88px; height: 88px;
+  width: 120px; height: 120px;
   display: flex; align-items: center; justify-content: center;
 }
 .cert-badge__img {
-  max-width: 88px; max-height: 88px;
+  max-width: 120px; max-height: 120px;
   object-fit: contain;
 }
 /* Tooltip — visible solo en hover */
@@ -1186,10 +1186,10 @@ a.footer__link-static:hover { color: #00b4d8; }
   .hero { padding: 90px 20px 70px; }
   .hero__logo-img { width: 150px; }
   .hero__stat-number { font-size: 28px; }
-  .cert-bar__inner { gap: 16px; }
+  .cert-bar__inner { gap: 20px; }
   .cert-badge { padding: 14px 18px; }
-  .cert-badge__img-wrap { width: 68px; height: 68px; }
-  .cert-badge__img { max-width: 68px; max-height: 68px; }
+  .cert-badge__img-wrap { width: 84px; height: 84px; }
+  .cert-badge__img { max-width: 84px; max-height: 84px; }
   .floating-contact { right: 16px; bottom: 16px; gap: 12px; }
   .floating-btn { width: 52px; height: 52px; }
   .floating-btn__tooltip { display: none; }
@@ -1216,6 +1216,14 @@ a.footer__link-static:hover { color: #00b4d8; }
   .clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .pilares-grid { grid-template-columns: 1fr !important; }
   .admin-vac-row { grid-template-columns: 1fr 1fr !important; }
+}
+
+.clients-more-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px;
+  border: 1px solid #e2e8f0; border-radius: 999px;
+  background: #f8fafb;
+  font-size: 13px; font-weight: 600; color: #5a6b7e;
 }
 
 /* ── CLIENT LOGO PLACEHOLDER ── */

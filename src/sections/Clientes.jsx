@@ -58,9 +58,9 @@ export function Clientes() {
         ))}
       </div>
 
-      <p className="section__text" style={{ textAlign: "center", maxWidth: 620, margin: "24px auto 0", fontSize: 13, color: "#9fb0c2" }}>
-        Entre otros.
-      </p>
+      <div style={{ textAlign: "center", marginTop: 28 }}>
+        <span className="clients-more-badge">+ Entre otros</span>
+      </div>
     </section>
   );
 }
