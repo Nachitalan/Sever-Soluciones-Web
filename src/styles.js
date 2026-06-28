@@ -285,11 +285,12 @@ img { max-width: 100%; height: auto; }
 .cert-bar__inner {
   max-width: 1100px; margin: 0 auto;
   display: flex; align-items: center; justify-content: center;
-  gap: 36px; flex-wrap: wrap;
+  gap: 72px; flex-wrap: wrap;
 }
 .cert-badge {
   position: relative;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px;
   padding: 12px;
   transition: transform 0.3s;
   cursor: default;
@@ -298,12 +299,18 @@ img { max-width: 100%; height: auto; }
   transform: translateY(-2px);
 }
 .cert-badge__img-wrap {
-  width: 120px; height: 120px;
+  width: 240px; height: 240px;
   display: flex; align-items: center; justify-content: center;
 }
 .cert-badge__img {
-  max-width: 120px; max-height: 120px;
+  max-width: 240px; max-height: 240px;
   object-fit: contain;
+}
+.cert-badge__cert-number {
+  font-size: 12px; font-weight: 600;
+  color: #0a2a4a;
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 /* Tooltip — visible solo en hover */
 .cert-badge__tooltip {
@@ -1186,10 +1193,10 @@ a.footer__link-static:hover { color: #00b4d8; }
   .hero { padding: 90px 20px 70px; }
   .hero__logo-img { width: 150px; }
   .hero__stat-number { font-size: 28px; }
-  .cert-bar__inner { gap: 20px; }
-  .cert-badge { padding: 14px 18px; }
-  .cert-badge__img-wrap { width: 84px; height: 84px; }
-  .cert-badge__img { max-width: 84px; max-height: 84px; }
+  .cert-bar__inner { gap: 40px; }
+  .cert-badge { padding: 28px 36px; }
+  .cert-badge__img-wrap { width: 168px; height: 168px; }
+  .cert-badge__img { max-width: 168px; max-height: 168px; }
   .floating-contact { right: 16px; bottom: 16px; gap: 12px; }
   .floating-btn { width: 52px; height: 52px; }
   .floating-btn__tooltip { display: none; }

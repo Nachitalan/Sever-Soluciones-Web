@@ -6,11 +6,12 @@ export function CertificationsBar() {
     <section id="certificaciones" className="cert-bar">
       <div className="cert-bar__inner">
         {CERTIFICATIONS.map((c, i) => (
-          <Reveal key={c.name} delay={i * 0.08}>
+          <Reveal key={c.   name} delay={i * 0.08}>
             <div className="cert-badge">
               <div className="cert-badge__img-wrap">
                 <img src={c.img} alt={c.name} className="cert-badge__img" />
               </div>
+              {c.cert && <span className="cert-badge__cert-number">{c.cert}</span>}
               {/* Tooltip: visible solo al hover */}
               <div className="cert-badge__tooltip">
                 <span className="cert-badge__tooltip-name">{c.name}</span>

@@ -7,7 +7,7 @@ export function CajasContenedores() {
     <section id="cajas-contenedores" className="section section--white">
       <Reveal>
         <p className="section__label" style={{ textAlign: "center" }}>CAJAS Y CONTENEDORES</p>
-        <h2 className="section__title" style={{ textAlign: "center" }}>Tipos de Caja</h2>
+        <h2 className="section__title" style={{ textAlign: "center" }}>Tipo de Remolque</h2>
         <p className="section__text" style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 40px" }}>
           Contamos con distintos tipos de caja para adaptarnos a las necesidades específicas de cada carga.
         </p>
@@ -21,7 +21,7 @@ export function CajasContenedores() {
                   <img src={c.img} alt={c.label} className="flot-card__img" />
                 ) : (
                   <div className="flot-card__image--placeholder">
-                    {i === 0 ? I.snow : I.box}
+                    {i === 0 ? I.box : i === 1 ? I.snow : I.truck}
                     <span>Imagen próximamente</span>
                   </div>
                 )}

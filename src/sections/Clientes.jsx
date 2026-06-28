@@ -59,7 +59,7 @@ export function Clientes() {
       </div>
 
       <div style={{ textAlign: "center", marginTop: 28 }}>
-        <span className="clients-more-badge">+ Entre otros</span>
+        <span className="clients-more-badge">Entre otros</span>
       </div>
     </section>
   );

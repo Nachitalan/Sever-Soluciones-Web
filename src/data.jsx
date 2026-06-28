@@ -62,7 +62,7 @@ export const CERTIFICATIONS = [
     desc: "Programa de cooperación entre el gobierno de EE. UU. y la industria privada que certifica buenas prácticas de seguridad en la cadena de suministro del comercio internacional." },
   { name: "Transporte Limpio", img: "/certificacion-transportelimpio.png",
     desc: "Distintivo otorgado por la SEMARNAT a empresas de autotransporte comprometidas con la reducción de emisiones contaminantes y el uso eficiente de combustible." },
-  { name: "OEA",               img: "/Sello-OEA.png", enProceso: true,
+  { name: "OEA",               img: "/OEA-BUENO.png", enProceso: true,
     desc: "Operador Económico Autorizado: reconocimiento aduanero internacional a empresas con altos estándares de seguridad y cumplimiento en su cadena logística." },
   { name: "BASC",              img: "/logobasc300-1.png", cert: "CERTIFIED MEXGDL00215-1-2",
     desc: "Alianza Empresarial para un Comercio Seguro: certifica el cumplimiento de estándares internacionales de seguridad en la cadena de suministro." },
@@ -165,13 +165,18 @@ export const FLOTILLA = [
 export const CAJAS_CONTENEDORES = [
   {
     img: null,
-    label: "Caja Refrigerada",
+    label: "Seca",
+    desc: "Texto de ejemplo: unidad sin control de temperatura, pensada para carga general, maximizando el espacio disponible para optimizar cada envío.",
+  },
+  {
+    img: null,
+    label: "Refrigerada/Congelada",
     desc: "Texto de ejemplo: unidad equipada con sistema de refrigeración que mantiene la temperatura controlada durante todo el trayecto, ideal para mercancía perecedera.",
   },
   {
     img: null,
-    label: "Caja Seca",
-    desc: "Texto de ejemplo: unidad sin control de temperatura, pensada para carga general, maximizando el espacio disponible para optimizar cada envío.",
+    label: "Portacontenedores",
+    desc: "Texto de ejemplo, próximamente se actualizará esta información.",
   },
 ];
 
